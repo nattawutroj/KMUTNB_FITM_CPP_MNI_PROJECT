@@ -1486,6 +1486,7 @@ void Displays(int show)
     string show_manu = "        [A]dd Item    [R]ergister member    [S]ell    [M]ember list                                                                                                                                                                         =\n";
     string list = "=                                                   =                                                                                                 =                               =                                                     =\n";
     string header = "=                  ITEM NO.                         =                                       NAME ITEM                                                 =           Quantity            =                   ITEM PRICE (Baht)                 =\n";
+    string header_add_item = "=                  ITEM NO.                         =                                       NAME ITEM                                                 =                   ITEM PRICE (Baht)                 =           Status            =\n";
     cout << border << title_bar << border << show_manu << border;
     if (show == 1)
     {
@@ -1596,6 +1597,72 @@ void Displays(int show)
             Displays(1);
         }
     }
+    else if(show == 4)
+    {
+        int loop_add = 0;
+        string dummy;
+        while(item[loop_add][0] != dummy)
+        {
+            component[loop_add][0] = item[loop_add][0];
+            component[loop_add][1] = item[loop_add][1];
+            component[loop_add][2] = item[loop_add][2];
+            component[loop_add][3] = "Confirm";
+            loop_add++;
+        }
+        cout << header_add_item << border;
+        int loop = 0;
+        while (loop <= 40)
+        {
+            cout << "=" << setw(26) << component[loop][0] << setw(26) << "=" << setw(49) << component[loop][1] << setw(49) << "=" << setw(27) << component[loop][2] << setw(27) << "=" << setw(16) << component[loop][3] << setw(16) << "=" << endl;
+            loop++;
+        }
+        cout << border << endl;
+        cout << setw(125) << " Add Item ( INPUT Character [X] in Item Code For Exit )" << endl;
+        cout << endl;
+        cout << setw(100) << "Item Code : ";
+        string code;
+        cin >> code;
+        if(code == "X" || code == "x")
+        {
+            reset_component();
+            Displays(1);
+        }
+        cout << setw(100) << "Item Name : ";
+        string name;
+        cin >> name;
+        cout << setw(100) << "Item Price : ";
+        string price;
+        cin >> price;
+        item[loop_add][0] = code;
+        item[loop_add][1] = name;
+        item[loop_add][2] = price;
+        cout << " Confirm ? (Y/N) : ";
+        string confirm;
+        cin >> confirm;
+        if(confirm == "Y" || confirm == "y")
+        {
+            write_file_item();
+            read_file_item();
+            cout << border << endl;
+            cout << setw(125) << "Add Item Success" << endl;
+            cout << border << endl;
+            cout << setw(125) << " Item Code : " << item[loop_add][0] << endl;
+            cout << setw(125) << "Item Name : " << item[loop_add][1] << endl;
+            cout << setw(125) << "Item Price : " << item[loop_add][2] << endl;
+            cout << border << endl;
+            cout << setw(125) << "Press Enter to continue...";
+            cin.ignore();
+            cin.get();
+            reset_component();
+            Displays(4);
+        }
+        else
+        {
+            reset_component();
+            Displays(4);
+        }
+
+    }
 }
 void Sell()
 {
@@ -1603,13 +1670,13 @@ void Sell()
     cin >> command;
     if (command == "a" || command == "A" || command == ".add")
     {
-        Add_item();
+        reset_component();
+        Displays(4);
     }
     else if (command == "r" || command == "R" || command == ".reg")
     {
         reset_component();
         Displays(3);
-        // Reg_member();
     }
     else if (command == "s" || command == "S" || command == ".member")
     {
