@@ -1,5 +1,7 @@
 #include <iostream>
 #include <fstream>
+#include <iomanip>
+#include <string>
 #include "colormod.h"
 using namespace std;
 Color::Modifier red(Color::FG_RED);
