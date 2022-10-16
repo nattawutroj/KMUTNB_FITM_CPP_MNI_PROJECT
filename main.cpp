@@ -1,11 +1,17 @@
 #include <iostream>
 #include <fstream>
+#include "colormod.h"
 using namespace std;
+Color::Modifier red(Color::FG_RED);
+Color::Modifier def(Color::FG_DEFAULT);
 string component[1000][10];
 string item[1000][3];
 string member[1000][3];
 int sum = 0;
-void Displays();
+int Process_sell_change(string money);
+void Process_sell_memeber(string phone);
+void Displays(int show);
+void reset_component();
 void Add_item();
 void read_file_item();
 void read_file_member();
@@ -26,10 +32,20 @@ int main()
 {
     read_file_item();
     read_file_member();
-    Displays();
+    Displays(1);
     write_file_item();
     write_file_member();
     return 1;
+}
+void reset_component()
+{
+    for (int i = 0; i < 1000; i++)
+    {
+        for (int j = 0; j < 10; j++)
+        {
+            component[i][j] = "";
+        }
+    }
 }
 void convert(int D)
 {
@@ -1460,7 +1476,7 @@ void read_file_member()
     }
     inf.close();
 }
-void Displays()
+void Displays(int show)
 {
     system("clear");
     string border = "=============================================================================================================================================================================================================================================\n";
@@ -1468,32 +1484,72 @@ void Displays()
     string show_manu = "        [A]dd Item    [R]ergister member    [S]ell    [M]ember list                                                                                                                                                                         =\n";
     string list = "=                                                   =                                                                                                 =                               =                                                     =\n";
     string header = "=                  ITEM NO.                         =                                       NAME ITEM                                                 =           Quantity            =                   ITEM PRICE (Baht)                 =\n";
-    cout << border << title_bar << border << show_manu << border << header << border;
-    int loop = 0;
-    while (loop <= 40)
+    cout << border << title_bar << border << show_manu << border;
+    if (show == 1)
     {
-        cout << "=" << setw(26) << component[loop][0] << setw(26) << "=" << setw(49) << component[loop][1] << setw(49) << "=" << setw(16) << component[loop][3] << setw(16) << "=" << setw(27) << component[loop][2] << setw(27) << "=" << endl;
-        loop++;
+        cout << header << border;
+        int loop = 0;
+        while (loop <= 40)
+        {
+            cout << "=" << setw(26) << component[loop][0] << setw(26) << "=" << setw(49) << component[loop][1] << setw(49) << "=" << setw(16) << component[loop][3] << setw(16) << "=" << setw(27) << component[loop][2] << setw(27) << "=" << endl;
+            loop++;
+        }
+        cout << border << endl;
+        cout << endl;
+        cout << "  " << component[500][0] << setw(38) << component[500][1] << setw(38) << component[500][2] << setw(38) << component[500][3] << setw(38) << component[500][4] << setw(38) << component[500][5] << setw(38) << endl;
+        cout << component[501][0] << setw(38) << component[501][1] << setw(38) << component[501][2] << setw(38) << component[501][3] << setw(38) << component[501][4] << setw(38) << component[501][5] << setw(38) << endl;
+        cout << component[502][0] << setw(38) << component[502][1] << setw(38) << component[502][2] << setw(38) << component[502][3] << setw(38) << component[502][4] << setw(38) << component[502][5] << setw(38) << endl;
+        cout << component[503][0] << setw(38) << component[503][1] << setw(38) << component[503][2] << setw(38) << component[503][3] << setw(38) << component[503][4] << setw(38) << component[503][5] << setw(38) << endl;
+        cout << component[504][0] << setw(38) << component[504][1] << setw(38) << component[504][2] << setw(38) << component[504][3] << setw(38) << component[504][4] << setw(38) << component[504][5] << setw(38) << endl;
+        cout << component[505][0] << setw(38) << component[505][1] << setw(38) << component[505][2] << setw(38) << component[505][3] << setw(38) << component[505][4] << setw(38) << component[505][5] << setw(38) << endl;
+        cout << component[506][0] << setw(38) << component[506][1] << setw(38) << component[506][2] << setw(38) << component[506][3] << setw(38) << component[506][4] << setw(38) << component[506][5] << setw(38) << endl;
+        cout << component[507][0] << setw(38) << component[507][1] << setw(38) << component[507][2] << setw(38) << component[507][3] << setw(38) << component[507][4] << setw(38) << component[507][5] << setw(38) << endl;
+        cout << component[508][0] << setw(38) << component[508][1] << setw(38) << component[508][2] << setw(38) << component[508][3] << setw(38) << component[508][4] << setw(38) << component[508][5] << setw(38) << endl;
+        cout << component[509][0] << setw(38) << component[509][1] << setw(38) << component[509][2] << setw(38) << component[509][3] << setw(38) << component[509][4] << setw(38) << component[509][5] << setw(38) << endl;
+        cout << component[510][0] << setw(38) << component[510][1] << setw(38) << component[510][2] << setw(38) << component[510][3] << setw(38) << component[510][4] << setw(38) << component[510][5] << setw(38) << endl;
+        cout << component[511][0] << setw(38) << component[511][1] << setw(38) << component[511][2] << setw(38) << component[511][3] << setw(38) << component[511][4] << setw(38) << component[511][5] << setw(38) << endl;
+        cout << component[512][0] << setw(38) << component[512][1] << setw(38) << component[512][2] << setw(38) << component[512][3] << setw(38) << component[512][4] << setw(38) << component[512][5] << setw(38) << endl;
+        cout << component[513][0] << setw(38) << component[513][1] << setw(38) << component[513][2] << setw(38) << component[513][3] << setw(38) << component[513][4] << setw(38) << component[513][5] << setw(38) << endl;
+        cout << component[514][0] << setw(38) << component[514][1] << setw(38) << component[514][2] << setw(38) << component[514][3] << setw(38) << component[514][4] << setw(38) << component[514][5] << setw(38) << endl;
+        cout << component[515][0] << setw(38) << component[515][1] << setw(38) << component[515][2] << setw(38) << component[515][3] << setw(38) << component[515][4] << setw(38) << component[515][5] << setw(38) << endl;
+        Sell();
     }
-    cout << border << endl;
-    cout << endl;
-    cout <<"  "<< component[500][0] << setw(38) << component[500][1] << setw(38) << component[500][2] << setw(38) << component[500][3] << setw(38) << component[500][4] << setw(38) << component[500][5] << setw(38) << endl;
-    cout << component[501][0] << setw(38) << component[501][1] << setw(38) << component[501][2] << setw(38) << component[501][3] << setw(38) << component[501][4] << setw(38) << component[501][5] << setw(38) << endl;
-    cout << component[502][0] << setw(38) << component[502][1] << setw(38) << component[502][2] << setw(38) << component[502][3] << setw(38) << component[502][4] << setw(38) << component[502][5] << setw(38) << endl;
-    cout << component[503][0] << setw(38) << component[503][1] << setw(38) << component[503][2] << setw(38) << component[503][3] << setw(38) << component[503][4] << setw(38) << component[503][5] << setw(38) << endl;
-    cout << component[504][0] << setw(38) << component[504][1] << setw(38) << component[504][2] << setw(38) << component[504][3] << setw(38) << component[504][4] << setw(38) << component[504][5] << setw(38) << endl;
-    cout << component[505][0] << setw(38) << component[505][1] << setw(38) << component[505][2] << setw(38) << component[505][3] << setw(38) << component[505][4] << setw(38) << component[505][5] << setw(38) << endl;
-    cout << component[506][0] << setw(38) << component[506][1] << setw(38) << component[506][2] << setw(38) << component[506][3] << setw(38) << component[506][4] << setw(38) << component[506][5] << setw(38) << endl;
-    cout << component[507][0] << setw(38) << component[507][1] << setw(38) << component[507][2] << setw(38) << component[507][3] << setw(38) << component[507][4] << setw(38) << component[507][5] << setw(38) << endl;
-    cout << component[508][0] << setw(38) << component[508][1] << setw(38) << component[508][2] << setw(38) << component[508][3] << setw(38) << component[508][4] << setw(38) << component[508][5] << setw(38) << endl;
-    cout << component[509][0] << setw(38) << component[509][1] << setw(38) << component[509][2] << setw(38) << component[509][3] << setw(38) << component[509][4] << setw(38) << component[509][5] << setw(38) << endl;
-    cout << component[510][0] << setw(38) << component[510][1] << setw(38) << component[510][2] << setw(38) << component[510][3] << setw(38) << component[510][4] << setw(38) << component[510][5] << setw(38) << endl;
-    cout << component[511][0] << setw(38) << component[511][1] << setw(38) << component[511][2] << setw(38) << component[511][3] << setw(38) << component[511][4] << setw(38) << component[511][5] << setw(38) << endl;
-    cout << component[512][0] << setw(38) << component[512][1] << setw(38) << component[512][2] << setw(38) << component[512][3] << setw(38) << component[512][4] << setw(38) << component[512][5] << setw(38) << endl;
-    cout << component[513][0] << setw(38) << component[513][1] << setw(38) << component[513][2] << setw(38) << component[513][3] << setw(38) << component[513][4] << setw(38) << component[513][5] << setw(38) << endl;
-    cout << component[514][0] << setw(38) << component[514][1] << setw(38) << component[514][2] << setw(38) << component[514][3] << setw(38) << component[514][4] << setw(38) << component[514][5] << setw(38) << endl;
-    cout << component[515][0] << setw(38) << component[515][1] << setw(38) << component[515][2] << setw(38) << component[515][3] << setw(38) << component[515][4] << setw(38) << component[515][5] << setw(38) << endl;
-    Sell();
+    else if (show == 2)
+    {
+        string phone, money;
+        cout << setw(100) << "Total = " << setw(38) << sum << setw(38) << endl;
+        cout << setw(100) << "Phone member : " << setw(38);
+        cin >> phone;
+        Process_sell_memeber(phone);
+        cout << setw(100) << "Name : " << setw(38) << component[200][1] << setw(38) << endl;
+        cout << setw(100) << "Point : " << setw(38) << component[200][2] << setw(38) << endl;
+        cout << setw(100) << "Receive Money : " << setw(38);
+        cin >> money;
+        cout << setw(100) << "Change : " << setw(38) << Process_sell_change(money) << setw(38) << endl;
+        cout << border << endl;
+        cout << endl;
+        cout << red << "  " << component[500][0] << setw(38) << component[500][1] << setw(38) << component[500][2] << setw(38) << component[500][3] << setw(38) << component[500][4] << setw(38) << component[500][5] << setw(38) << endl;
+        cout << component[501][0] << setw(38) << component[501][1] << setw(38) << component[501][2] << setw(38) << component[501][3] << setw(38) << component[501][4] << setw(38) << component[501][5] << setw(38) << endl;
+        cout << component[502][0] << setw(38) << component[502][1] << setw(38) << component[502][2] << setw(38) << component[502][3] << setw(38) << component[502][4] << setw(38) << component[502][5] << setw(38) << endl;
+        cout << component[503][0] << setw(38) << component[503][1] << setw(38) << component[503][2] << setw(38) << component[503][3] << setw(38) << component[503][4] << setw(38) << component[503][5] << setw(38) << endl;
+        cout << component[504][0] << setw(38) << component[504][1] << setw(38) << component[504][2] << setw(38) << component[504][3] << setw(38) << component[504][4] << setw(38) << component[504][5] << setw(38) << endl;
+        cout << component[505][0] << setw(38) << component[505][1] << setw(38) << component[505][2] << setw(38) << component[505][3] << setw(38) << component[505][4] << setw(38) << component[505][5] << setw(38) << endl;
+        cout << component[506][0] << setw(38) << component[506][1] << setw(38) << component[506][2] << setw(38) << component[506][3] << setw(38) << component[506][4] << setw(38) << component[506][5] << setw(38) << endl;
+        cout << component[507][0] << setw(38) << component[507][1] << setw(38) << component[507][2] << setw(38) << component[507][3] << setw(38) << component[507][4] << setw(38) << component[507][5] << setw(38) << endl;
+        cout << component[508][0] << setw(38) << component[508][1] << setw(38) << component[508][2] << setw(38) << component[508][3] << setw(38) << component[508][4] << setw(38) << component[508][5] << setw(38) << endl;
+        cout << component[509][0] << setw(38) << component[509][1] << setw(38) << component[509][2] << setw(38) << component[509][3] << setw(38) << component[509][4] << setw(38) << component[509][5] << setw(38) << endl;
+        cout << component[510][0] << setw(38) << component[510][1] << setw(38) << component[510][2] << setw(38) << component[510][3] << setw(38) << component[510][4] << setw(38) << component[510][5] << setw(38) << endl;
+        cout << component[511][0] << setw(38) << component[511][1] << setw(38) << component[511][2] << setw(38) << component[511][3] << setw(38) << component[511][4] << setw(38) << component[511][5] << setw(38) << endl;
+        cout << component[512][0] << setw(38) << component[512][1] << setw(38) << component[512][2] << setw(38) << component[512][3] << setw(38) << component[512][4] << setw(38) << component[512][5] << setw(38) << endl;
+        cout << component[513][0] << setw(38) << component[513][1] << setw(38) << component[513][2] << setw(38) << component[513][3] << setw(38) << component[513][4] << setw(38) << component[513][5] << setw(38) << endl;
+        cout << component[514][0] << setw(38) << component[514][1] << setw(38) << component[514][2] << setw(38) << component[514][3] << setw(38) << component[514][4] << setw(38) << component[514][5] << setw(38) << endl;
+        cout << component[515][0] << setw(38) << component[515][1] << setw(38) << component[515][2] << setw(38) << component[515][3] << setw(38) << component[515][4] << setw(38) << component[515][5] << setw(38) << def << endl;
+        cout << border << " Confirm ? (Y/N) : ";
+        string confirm;
+        cin >> confirm;
+        sum = 0;
+        Sell();
+    }
 }
 void Sell()
 {
@@ -1509,7 +1565,8 @@ void Sell()
     }
     else if (command == "s" || command == "S" || command == ".member")
     {
-        // Displays();
+        reset_component();
+        Displays(2);
     }
     else
     {
@@ -1534,11 +1591,30 @@ void Process(string code)
             component[loopin][2] = item[loop][2];
             sum = sum + stoi(item[loop][2]);
             convert(sum);
-            Displays();
+            Displays(1);
         }
         loop++;
     }
-    Displays();
+    Displays(1);
+}
+void Process_sell_memeber(string phone)
+{
+    int loop = 0;
+    while (loop < 1000)
+    {
+        if (member[loop][0] == phone)
+        {
+            component[200][1] = member[loop][1]; 
+            component[200][2] = member[loop][2];
+        }
+        loop++;
+    }
+}
+int Process_sell_change(string money)
+{
+    sum = stoi(money) - sum;
+    convert(sum);
+    return sum;
 }
 void Add_item()
 {
