@@ -1550,7 +1550,51 @@ void Displays(int show)
         string confirm;
         cin >> confirm;
         sum = 0;
-        Sell();
+        reset_component();
+        Displays(1);
+    }
+    else if(show == 3)
+    {
+        cout << border << endl;
+        cout << setw(125)<<" Register Member" << endl;
+        cout <<endl;
+        cout << setw(100) << "Name : ";
+        string name;
+        cin >> name;
+        cout << setw(100) << "Phone : ";
+        string phone;
+        cin >> phone;
+        cout << setw(100) << "Confirm ? (Y/N) : ";
+        string confirm;
+        cin >> confirm;
+        if(confirm == "Y" || confirm == "y")
+        {
+            int loop = 0;
+            string dummy;
+            while(member[loop][0] != dummy)
+            {
+                loop++;
+            }
+            member[loop][0] = phone;
+            member[loop][1] = name;
+            member[loop][2] = "0";
+            write_file_member();
+            read_file_member();
+            cout << border << endl;
+            cout << setw(125) << "Register Success" << endl;
+            cout << border << endl;
+            cout << setw(125) << "Name : " << member[loop][1] << endl;
+            cout << setw(125) << "Phone : " << member[loop][0] << endl;
+            cout << border << endl;
+            cout << setw(125) << "Press Enter to continue...";
+            cin.ignore();
+            cin.get();
+            Displays(1);
+        }
+        else
+        {
+            Displays(1);
+        }
     }
 }
 void Sell()
@@ -1563,6 +1607,8 @@ void Sell()
     }
     else if (command == "r" || command == "R" || command == ".reg")
     {
+        reset_component();
+        Displays(3);
         // Reg_member();
     }
     else if (command == "s" || command == "S" || command == ".member")
