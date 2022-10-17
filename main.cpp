@@ -9,8 +9,34 @@ Color::Modifier def(Color::FG_DEFAULT);
 string component[1000][10];
 string item[1000][3];
 string member[1000][3];
+// set size Display
+int size1 = 38;   // size of component Def = 38
+int size2 = 26;   // size of item Def = 26
+int size3 = 49;   // size of member Def = 49
+int size4 = 16;   // size of component Def = 16
+int size5 = 27;   // size of item Def = 27
+int size6 = 100;  // size of member Def = 100
+int size7 = 125;  // size of member Def = 125
+int size8 = 160;  // size of member Def = 160
+int size9 = 110;  // size of member Def = 110
+int size10 = 237; // size of member Def = 237
+int size11 = 118; // size of member Def = 118
+int size12 = 170; // size of member Def = 170
+int size13 = 52;  // size of member Def = 52
+int size14 = 98;  // size of member Def = 98
+int size15 = 32;  // size of member Def = 32
+int size16 = 54;  // size of member Def = 54
+
+// ----------------
 int sum = 0;
 int Process_sell_change(string money);
+void border();
+void title_bar();
+void show_manu();
+void l_i_s_t();
+void header();
+void header_add_item();
+void member_list_show();
 void Process_sell_memeber(string phone);
 void Displays(int show);
 void reset_component();
@@ -30,8 +56,65 @@ void Display_Price_Position_4(int dis_p);
 void Display_Price_Position_5(int dis_p);
 void Display_Price_Position_6(int dis_p);
 void convert(int D);
+void set_size();
+void member_list_show()
+{
+    cout << "=" << setw(size2) << "MEMBER PHONE" << setw(size2) << "=" << setw(size3) << "MEMBER NAME" << setw(size3) << "=" << setw(size5) << "MEMBER POINT" << setw(size5) << "=" << setw(size4) << "Status" << setw(size4) << "=" << endl;
+}
+void header_add_item()
+{
+    cout << "=" << setw(size2) << "ITEM NO." << setw(size2) << "=" << setw(size3) << "NAME ITEM" << setw(size3) << "=" << setw(size5) << "ITEM PRICE (Baht)" << setw(size5) << "=" << setw(size4) << "Status" << setw(size4) << "=" << endl;
+}
+void header()
+{
+    cout << "=" << setw(size2) << "ITEM NO." << setw(size2) << "=" << setw(size3) << "NAME ITEM" << setw(size3) << "=" << setw(size4) << "Quantity" << setw(size4) << "=" << setw(size5) << "ITEM PRICE (Baht)" << setw(size5) << "=" << endl;
+}
+void l_i_s_t()
+{
+    cout << "=" << setw(size13) << "=" << setw(size14) << "=" << setw(size15) << "=" << setw(size16) << "=" << endl;
+}
+void show_manu()
+{
+    cout << "       [A]dd Item    [R]ergister member    [S]ell    [M]ember list" << setw(size12) << endl;
+}
+void title_bar()
+{
+    cout << "=" << setw(size11) << "WELLCOME PEEWINWASH" << setw(20) << setw(size11) << "=" << endl;
+}
+void border()
+{
+    string bd = "";
+    for (int i = 0; i < size10; i++)
+    {
+        bd += "=";
+    }
+    cout << bd << endl;
+}
+void set_size()
+{
+    int percen;
+    cout << "Set size of component 50 - 100 : ";
+    cin >> percen;
+    size1 = (size1 * percen) / 100;
+    size2 = (size2 * percen) / 100;
+    size3 = (size3 * percen) / 100;
+    size4 = (size4 * percen) / 100;
+    size5 = (size5 * percen) / 100;
+    size6 = (size6 * percen) / 100;
+    size7 = (size7 * percen) / 100;
+    size8 = (size8 * percen) / 100;
+    size9 = (size9 * percen) / 100;
+    size10 = (size10 * percen) / 100;
+    size11 = (size11 * percen) / 100;
+    size12 = (size12 * percen) / 100;
+    size13 = (size13 * percen) / 100;
+    size14 = (size14 * percen) / 100;
+    size15 = (size15 * percen) / 100;
+    size16 = (size16 * percen) / 100;
+}
 int main()
 {
+    set_size();
     read_file_item();
     read_file_member();
     Displays(1);
@@ -1481,74 +1564,81 @@ void read_file_member()
 void Displays(int show)
 {
     system("clear");
-    string border = "=============================================================================================================================================================================================================================================\n";
-    string title_bar = "=                                                                                                             WELLCOME PEEWINWASH                                                                                                           =\n";
-    string show_manu = "        [A]dd Item    [R]ergister member    [S]ell    [M]ember list                                                                                                                                                                         =\n";
-    string list = "=                                                   =                                                                                                 =                               =                                                     =\n";
-    string header = "=                  ITEM NO.                         =                                       NAME ITEM                                                 =           Quantity            =                   ITEM PRICE (Baht)                 =\n";
-    string header_add_item = "=                  ITEM NO.                         =                                       NAME ITEM                                                 =                   ITEM PRICE (Baht)                 =           Status            =\n";
-    string member_list_show = "=                 MEMBER PHONE                      =                                       MEMBER NAME                                               =           MEMBER POINT                              =           Status            =\n";
-    cout << border << title_bar << border << show_manu << border;
+    // string border = "=============================================================================================================================================================================================================================================\n";
+    // string title_bar = "=                                                                                                             WELLCOME PEEWINWASH                                                                                                           =\n";
+    // string show_manu = "        [A]dd Item    [R]ergister member    [S]ell    [M]ember list                                                                                                                                                                         =\n";
+    // string list = "=                                                   =                                                                                                 =                               =                                                     =\n";
+    // string header = "=                  ITEM NO.                         =                                       NAME ITEM                                                 =           Quantity            =                   ITEM PRICE (Baht)                 =\n";
+    // string header_add_item = "=                  ITEM NO.                         =                                       NAME ITEM                                                 =                   ITEM PRICE (Baht)                 =           Status            =\n";
+    // string member_list_show = "=                 MEMBER PHONE                      =                                       MEMBER NAME                                               =           MEMBER POINT                              =           Status            =\n";
+    // cout << border << title_bar << border << show_manu << border;
+    border();
+    title_bar();
+    border();
+    show_manu();
+    border();
     if (show == 1)
     {
-        cout << header << border;
+        header();
+        border();
         int loop = 0;
         while (loop <= 40)
         {
-            cout << "=" << setw(26) << component[loop][0] << setw(26) << "=" << setw(49) << component[loop][1] << setw(49) << "=" << setw(16) << component[loop][3] << setw(16) << "=" << setw(27) << component[loop][2] << setw(27) << "=" << endl;
+            cout << "=" << setw(size2) << component[loop][0] << setw(size2) << "=" << setw(size3) << component[loop][1] << setw(size3) << "=" << setw(size4) << component[loop][3] << setw(size4) << "=" << setw(size5) << component[loop][2] << setw(size5) << "=" << endl;
             loop++;
         }
-        cout << border << endl;
+        border();
         cout << endl;
-        cout << "  " << component[500][0] << setw(38) << component[500][1] << setw(38) << component[500][2] << setw(38) << component[500][3] << setw(38) << component[500][4] << setw(38) << component[500][5] << setw(38) << endl;
-        cout << component[501][0] << setw(38) << component[501][1] << setw(38) << component[501][2] << setw(38) << component[501][3] << setw(38) << component[501][4] << setw(38) << component[501][5] << setw(38) << endl;
-        cout << component[502][0] << setw(38) << component[502][1] << setw(38) << component[502][2] << setw(38) << component[502][3] << setw(38) << component[502][4] << setw(38) << component[502][5] << setw(38) << endl;
-        cout << component[503][0] << setw(38) << component[503][1] << setw(38) << component[503][2] << setw(38) << component[503][3] << setw(38) << component[503][4] << setw(38) << component[503][5] << setw(38) << endl;
-        cout << component[504][0] << setw(38) << component[504][1] << setw(38) << component[504][2] << setw(38) << component[504][3] << setw(38) << component[504][4] << setw(38) << component[504][5] << setw(38) << endl;
-        cout << component[505][0] << setw(38) << component[505][1] << setw(38) << component[505][2] << setw(38) << component[505][3] << setw(38) << component[505][4] << setw(38) << component[505][5] << setw(38) << endl;
-        cout << component[506][0] << setw(38) << component[506][1] << setw(38) << component[506][2] << setw(38) << component[506][3] << setw(38) << component[506][4] << setw(38) << component[506][5] << setw(38) << endl;
-        cout << component[507][0] << setw(38) << component[507][1] << setw(38) << component[507][2] << setw(38) << component[507][3] << setw(38) << component[507][4] << setw(38) << component[507][5] << setw(38) << endl;
-        cout << component[508][0] << setw(38) << component[508][1] << setw(38) << component[508][2] << setw(38) << component[508][3] << setw(38) << component[508][4] << setw(38) << component[508][5] << setw(38) << endl;
-        cout << component[509][0] << setw(38) << component[509][1] << setw(38) << component[509][2] << setw(38) << component[509][3] << setw(38) << component[509][4] << setw(38) << component[509][5] << setw(38) << endl;
-        cout << component[510][0] << setw(38) << component[510][1] << setw(38) << component[510][2] << setw(38) << component[510][3] << setw(38) << component[510][4] << setw(38) << component[510][5] << setw(38) << endl;
-        cout << component[511][0] << setw(38) << component[511][1] << setw(38) << component[511][2] << setw(38) << component[511][3] << setw(38) << component[511][4] << setw(38) << component[511][5] << setw(38) << endl;
-        cout << component[512][0] << setw(38) << component[512][1] << setw(38) << component[512][2] << setw(38) << component[512][3] << setw(38) << component[512][4] << setw(38) << component[512][5] << setw(38) << endl;
-        cout << component[513][0] << setw(38) << component[513][1] << setw(38) << component[513][2] << setw(38) << component[513][3] << setw(38) << component[513][4] << setw(38) << component[513][5] << setw(38) << endl;
-        cout << component[514][0] << setw(38) << component[514][1] << setw(38) << component[514][2] << setw(38) << component[514][3] << setw(38) << component[514][4] << setw(38) << component[514][5] << setw(38) << endl;
-        cout << component[515][0] << setw(38) << component[515][1] << setw(38) << component[515][2] << setw(38) << component[515][3] << setw(38) << component[515][4] << setw(38) << component[515][5] << setw(38) << endl;
+        cout << "  " << component[500][0] << setw(size1) << component[500][1] << setw(size1) << component[500][2] << setw(size1) << component[500][3] << setw(size1) << component[500][4] << setw(size1) << component[500][5] << setw(size1) << endl;
+        cout << component[501][0] << setw(size1) << component[501][1] << setw(size1) << component[501][2] << setw(size1) << component[501][3] << setw(size1) << component[501][4] << setw(size1) << component[501][5] << setw(size1) << endl;
+        cout << component[502][0] << setw(size1) << component[502][1] << setw(size1) << component[502][2] << setw(size1) << component[502][3] << setw(size1) << component[502][4] << setw(size1) << component[502][5] << setw(size1) << endl;
+        cout << component[503][0] << setw(size1) << component[503][1] << setw(size1) << component[503][2] << setw(size1) << component[503][3] << setw(size1) << component[503][4] << setw(size1) << component[503][5] << setw(size1) << endl;
+        cout << component[504][0] << setw(size1) << component[504][1] << setw(size1) << component[504][2] << setw(size1) << component[504][3] << setw(size1) << component[504][4] << setw(size1) << component[504][5] << setw(size1) << endl;
+        cout << component[505][0] << setw(size1) << component[505][1] << setw(size1) << component[505][2] << setw(size1) << component[505][3] << setw(size1) << component[505][4] << setw(size1) << component[505][5] << setw(size1) << endl;
+        cout << component[506][0] << setw(size1) << component[506][1] << setw(size1) << component[506][2] << setw(size1) << component[506][3] << setw(size1) << component[506][4] << setw(size1) << component[506][5] << setw(size1) << endl;
+        cout << component[507][0] << setw(size1) << component[507][1] << setw(size1) << component[507][2] << setw(size1) << component[507][3] << setw(size1) << component[507][4] << setw(size1) << component[507][5] << setw(size1) << endl;
+        cout << component[508][0] << setw(size1) << component[508][1] << setw(size1) << component[508][2] << setw(size1) << component[508][3] << setw(size1) << component[508][4] << setw(size1) << component[508][5] << setw(size1) << endl;
+        cout << component[509][0] << setw(size1) << component[509][1] << setw(size1) << component[509][2] << setw(size1) << component[509][3] << setw(size1) << component[509][4] << setw(size1) << component[509][5] << setw(size1) << endl;
+        cout << component[510][0] << setw(size1) << component[510][1] << setw(size1) << component[510][2] << setw(size1) << component[510][3] << setw(size1) << component[510][4] << setw(size1) << component[510][5] << setw(size1) << endl;
+        cout << component[511][0] << setw(size1) << component[511][1] << setw(size1) << component[511][2] << setw(size1) << component[511][3] << setw(size1) << component[511][4] << setw(size1) << component[511][5] << setw(size1) << endl;
+        cout << component[512][0] << setw(size1) << component[512][1] << setw(size1) << component[512][2] << setw(size1) << component[512][3] << setw(size1) << component[512][4] << setw(size1) << component[512][5] << setw(size1) << endl;
+        cout << component[513][0] << setw(size1) << component[513][1] << setw(size1) << component[513][2] << setw(size1) << component[513][3] << setw(size1) << component[513][4] << setw(size1) << component[513][5] << setw(size1) << endl;
+        cout << component[514][0] << setw(size1) << component[514][1] << setw(size1) << component[514][2] << setw(size1) << component[514][3] << setw(size1) << component[514][4] << setw(size1) << component[514][5] << setw(size1) << endl;
+        cout << component[515][0] << setw(size1) << component[515][1] << setw(size1) << component[515][2] << setw(size1) << component[515][3] << setw(size1) << component[515][4] << setw(size1) << component[515][5] << setw(size1) << endl;
         Sell();
     }
     else if (show == 2)
     {
         string phone, money;
-        cout << setw(100) << "Total = " << setw(38) << sum << setw(38) << endl;
-        cout << setw(100) << "Phone member : " << setw(38);
+        cout << setw(size6) << "Total = " << setw(size1) << sum << setw(size1) << endl;
+        cout << setw(size6) << "Phone member : " << setw(size1);
         cin >> phone;
         Process_sell_memeber(phone);
-        cout << setw(100) << "Name : " << setw(38) << component[200][1] << setw(38) << endl;
-        cout << setw(100) << "Point : " << setw(38) << component[200][2] << setw(38) << endl;
-        cout << setw(100) << "Receive Money : " << setw(38);
+        cout << setw(size6) << "Name : " << setw(size1) << component[200][1] << setw(size1) << endl;
+        cout << setw(size6) << "Point : " << setw(size1) << component[200][2] << setw(size1) << endl;
+        cout << setw(size6) << "Receive Money : " << setw(size1);
         cin >> money;
-        cout << setw(100) << "Change : " << setw(38) << Process_sell_change(money) << setw(38) << endl;
-        cout << border << endl;
+        cout << setw(size6) << "Change : " << setw(size1) << Process_sell_change(money) << setw(size1) << endl;
+        border();
         cout << endl;
-        cout << red << "  " << component[500][0] << setw(38) << component[500][1] << setw(38) << component[500][2] << setw(38) << component[500][3] << setw(38) << component[500][4] << setw(38) << component[500][5] << setw(38) << endl;
-        cout << component[501][0] << setw(38) << component[501][1] << setw(38) << component[501][2] << setw(38) << component[501][3] << setw(38) << component[501][4] << setw(38) << component[501][5] << setw(38) << endl;
-        cout << component[502][0] << setw(38) << component[502][1] << setw(38) << component[502][2] << setw(38) << component[502][3] << setw(38) << component[502][4] << setw(38) << component[502][5] << setw(38) << endl;
-        cout << component[503][0] << setw(38) << component[503][1] << setw(38) << component[503][2] << setw(38) << component[503][3] << setw(38) << component[503][4] << setw(38) << component[503][5] << setw(38) << endl;
-        cout << component[504][0] << setw(38) << component[504][1] << setw(38) << component[504][2] << setw(38) << component[504][3] << setw(38) << component[504][4] << setw(38) << component[504][5] << setw(38) << endl;
-        cout << component[505][0] << setw(38) << component[505][1] << setw(38) << component[505][2] << setw(38) << component[505][3] << setw(38) << component[505][4] << setw(38) << component[505][5] << setw(38) << endl;
-        cout << component[506][0] << setw(38) << component[506][1] << setw(38) << component[506][2] << setw(38) << component[506][3] << setw(38) << component[506][4] << setw(38) << component[506][5] << setw(38) << endl;
-        cout << component[507][0] << setw(38) << component[507][1] << setw(38) << component[507][2] << setw(38) << component[507][3] << setw(38) << component[507][4] << setw(38) << component[507][5] << setw(38) << endl;
-        cout << component[508][0] << setw(38) << component[508][1] << setw(38) << component[508][2] << setw(38) << component[508][3] << setw(38) << component[508][4] << setw(38) << component[508][5] << setw(38) << endl;
-        cout << component[509][0] << setw(38) << component[509][1] << setw(38) << component[509][2] << setw(38) << component[509][3] << setw(38) << component[509][4] << setw(38) << component[509][5] << setw(38) << endl;
-        cout << component[510][0] << setw(38) << component[510][1] << setw(38) << component[510][2] << setw(38) << component[510][3] << setw(38) << component[510][4] << setw(38) << component[510][5] << setw(38) << endl;
-        cout << component[511][0] << setw(38) << component[511][1] << setw(38) << component[511][2] << setw(38) << component[511][3] << setw(38) << component[511][4] << setw(38) << component[511][5] << setw(38) << endl;
-        cout << component[512][0] << setw(38) << component[512][1] << setw(38) << component[512][2] << setw(38) << component[512][3] << setw(38) << component[512][4] << setw(38) << component[512][5] << setw(38) << endl;
-        cout << component[513][0] << setw(38) << component[513][1] << setw(38) << component[513][2] << setw(38) << component[513][3] << setw(38) << component[513][4] << setw(38) << component[513][5] << setw(38) << endl;
-        cout << component[514][0] << setw(38) << component[514][1] << setw(38) << component[514][2] << setw(38) << component[514][3] << setw(38) << component[514][4] << setw(38) << component[514][5] << setw(38) << endl;
-        cout << component[515][0] << setw(38) << component[515][1] << setw(38) << component[515][2] << setw(38) << component[515][3] << setw(38) << component[515][4] << setw(38) << component[515][5] << setw(38) << def << endl;
-        cout << border << " Confirm ? (Y/N) : ";
+        cout << red << "  " << component[500][0] << setw(size1) << component[500][1] << setw(size1) << component[500][2] << setw(size1) << component[500][3] << setw(size1) << component[500][4] << setw(size1) << component[500][5] << setw(size1) << endl;
+        cout << component[501][0] << setw(size1) << component[501][1] << setw(size1) << component[501][2] << setw(size1) << component[501][3] << setw(size1) << component[501][4] << setw(size1) << component[501][5] << setw(size1) << endl;
+        cout << component[502][0] << setw(size1) << component[502][1] << setw(size1) << component[502][2] << setw(size1) << component[502][3] << setw(size1) << component[502][4] << setw(size1) << component[502][5] << setw(size1) << endl;
+        cout << component[503][0] << setw(size1) << component[503][1] << setw(size1) << component[503][2] << setw(size1) << component[503][3] << setw(size1) << component[503][4] << setw(size1) << component[503][5] << setw(size1) << endl;
+        cout << component[504][0] << setw(size1) << component[504][1] << setw(size1) << component[504][2] << setw(size1) << component[504][3] << setw(size1) << component[504][4] << setw(size1) << component[504][5] << setw(size1) << endl;
+        cout << component[505][0] << setw(size1) << component[505][1] << setw(size1) << component[505][2] << setw(size1) << component[505][3] << setw(size1) << component[505][4] << setw(size1) << component[505][5] << setw(size1) << endl;
+        cout << component[506][0] << setw(size1) << component[506][1] << setw(size1) << component[506][2] << setw(size1) << component[506][3] << setw(size1) << component[506][4] << setw(size1) << component[506][5] << setw(size1) << endl;
+        cout << component[507][0] << setw(size1) << component[507][1] << setw(size1) << component[507][2] << setw(size1) << component[507][3] << setw(size1) << component[507][4] << setw(size1) << component[507][5] << setw(size1) << endl;
+        cout << component[508][0] << setw(size1) << component[508][1] << setw(size1) << component[508][2] << setw(size1) << component[508][3] << setw(size1) << component[508][4] << setw(size1) << component[508][5] << setw(size1) << endl;
+        cout << component[509][0] << setw(size1) << component[509][1] << setw(size1) << component[509][2] << setw(size1) << component[509][3] << setw(size1) << component[509][4] << setw(size1) << component[509][5] << setw(size1) << endl;
+        cout << component[510][0] << setw(size1) << component[510][1] << setw(size1) << component[510][2] << setw(size1) << component[510][3] << setw(size1) << component[510][4] << setw(size1) << component[510][5] << setw(size1) << endl;
+        cout << component[511][0] << setw(size1) << component[511][1] << setw(size1) << component[511][2] << setw(size1) << component[511][3] << setw(size1) << component[511][4] << setw(size1) << component[511][5] << setw(size1) << endl;
+        cout << component[512][0] << setw(size1) << component[512][1] << setw(size1) << component[512][2] << setw(size1) << component[512][3] << setw(size1) << component[512][4] << setw(size1) << component[512][5] << setw(size1) << endl;
+        cout << component[513][0] << setw(size1) << component[513][1] << setw(size1) << component[513][2] << setw(size1) << component[513][3] << setw(size1) << component[513][4] << setw(size1) << component[513][5] << setw(size1) << endl;
+        cout << component[514][0] << setw(size1) << component[514][1] << setw(size1) << component[514][2] << setw(size1) << component[514][3] << setw(size1) << component[514][4] << setw(size1) << component[514][5] << setw(size1) << endl;
+        cout << component[515][0] << setw(size1) << component[515][1] << setw(size1) << component[515][2] << setw(size1) << component[515][3] << setw(size1) << component[515][4] << setw(size1) << component[515][5] << setw(size1) << def << endl;
+        border();
+        cout << " Confirm ? (Y/N) : ";
         string confirm;
         cin >> confirm;
         sum = 0;
@@ -1557,16 +1647,16 @@ void Displays(int show)
     }
     else if (show == 3)
     {
-        cout << border << endl;
-        cout << setw(125) << " Register Member" << endl;
+        border();
+        cout << setw(size7) << " Register Member" << endl;
         cout << endl;
-        cout << setw(100) << "Name : ";
+        cout << setw(size6) << "Name : ";
         string name;
         cin >> name;
-        cout << setw(100) << "Phone : ";
+        cout << setw(size6) << "Phone : ";
         string phone;
         cin >> phone;
-        cout << setw(100) << "Confirm ? (Y/N) : ";
+        cout << setw(size6) << "Confirm ? (Y/N) : ";
         string confirm;
         cin >> confirm;
         if (confirm == "Y" || confirm == "y")
@@ -1582,13 +1672,13 @@ void Displays(int show)
             member[loop][2] = "0";
             write_file_member();
             read_file_member();
-            cout << border << endl;
-            cout << setw(125) << "Register Success" << endl;
-            cout << border << endl;
-            cout << setw(125) << "Name : " << member[loop][1] << endl;
-            cout << setw(125) << "Phone : " << member[loop][0] << endl;
-            cout << border << endl;
-            cout << setw(125) << "Press Enter to continue...";
+            border();
+            cout << setw(size7) << "Register Success" << endl;
+            border();
+            cout << setw(size7) << "Name : " << member[loop][1] << endl;
+            cout << setw(size7) << "Phone : " << member[loop][0] << endl;
+            border();
+            cout << setw(size7) << "Press Enter to continue...";
             cin.ignore();
             cin.get();
             Displays(1);
@@ -1610,17 +1700,18 @@ void Displays(int show)
             component[loop_add][3] = "Confirm";
             loop_add++;
         }
-        cout << header_add_item << border;
+        header_add_item();
+        border();
         int loop = 0;
         while (loop <= 40)
         {
-            cout << "=" << setw(26) << component[loop][0] << setw(26) << "=" << setw(49) << component[loop][1] << setw(49) << "=" << setw(27) << component[loop][2] << setw(27) << "=" << setw(16) << component[loop][3] << setw(16) << "=" << endl;
+            cout << "=" << setw(size2) << component[loop][0] << setw(size2) << "=" << setw(size3) << component[loop][1] << setw(size3) << "=" << setw(size5) << component[loop][2] << setw(size5) << "=" << setw(size4) << component[loop][3] << setw(size4) << "=" << endl;
             loop++;
         }
-        cout << border << endl;
-        cout << setw(125) << " Add Item ( INPUT Character [X] in Item Code For Exit )" << endl;
+        border();
+        cout << setw(size7) << " Add Item ( INPUT Character [X] in Item Code For Exit )" << endl;
         cout << endl;
-        cout << setw(100) << "Item Code : ";
+        cout << setw(size6) << "Item Code : ";
         string code;
         cin >> code;
         if (code == "X" || code == "x")
@@ -1628,10 +1719,10 @@ void Displays(int show)
             reset_component();
             Displays(1);
         }
-        cout << setw(100) << "Item Name : ";
+        cout << setw(size6) << "Item Name : ";
         string name;
         cin >> name;
-        cout << setw(100) << "Item Price : ";
+        cout << setw(size6) << "Item Price : ";
         string price;
         cin >> price;
         cout << " Confirm ? (Y/N) : ";
@@ -1644,14 +1735,14 @@ void Displays(int show)
             item[loop_add][2] = price;
             write_file_item();
             read_file_item();
-            cout << border << endl;
-            cout << setw(125) << "Add Item Success" << endl;
-            cout << border << endl;
-            cout << setw(125) << " Item Code : " << item[loop_add][0] << endl;
-            cout << setw(125) << "Item Name : " << item[loop_add][1] << endl;
-            cout << setw(125) << "Item Price : " << item[loop_add][2] << endl;
-            cout << border << endl;
-            cout << setw(125) << "Press Enter to continue...";
+            border();
+            cout << setw(size7) << "Add Item Success" << endl;
+            border();
+            cout << setw(size7) << " Item Code : " << item[loop_add][0] << endl;
+            cout << setw(size7) << "Item Name : " << item[loop_add][1] << endl;
+            cout << setw(size7) << "Item Price : " << item[loop_add][2] << endl;
+            border();
+            cout << setw(size7) << "Press Enter to continue...";
             cin.ignore();
             cin.get();
             reset_component();
@@ -1677,7 +1768,7 @@ void Displays(int show)
             component[loop_member][3] = "Confirm";
             loop_member++;
         }
-        if(loop_member % 40 == 0)
+        if (loop_member % 40 == 0)
         {
             page_end = loop_member / 40;
         }
@@ -1687,17 +1778,18 @@ void Displays(int show)
         }
         int loop_show_member_list = 0;
     jump:
-        cout << member_list_show << border;
+        member_list_show();
+        border();
         while (loop_show_member_list <= 40 * page_in)
         {
-            cout << "=" << setw(26) << component[loop_show_member_list][0] << setw(26) << "=" << setw(49) << component[loop_show_member_list][1] << setw(49) << "=" << setw(27) << component[loop_show_member_list][2] << setw(27) << "=" << setw(16) << component[loop_show_member_list][3] << setw(16) << "=" << endl;
+            cout << "=" << setw(size2) << component[loop_show_member_list][0] << setw(size2) << "=" << setw(size3) << component[loop_show_member_list][1] << setw(size3) << "=" << setw(size5) << component[loop_show_member_list][2] << setw(size5) << "=" << setw(size4) << component[loop_show_member_list][3] << setw(size4) << "=" << endl;
             loop_show_member_list++;
         }
-        cout << border << endl;
-        cout << setw(125) << "Page " << page_in << " OF " << page_end << endl;
-        cout << setw(160) << "( INPUT Character [X] in Item Code For Exit { OR } INPUT NUMBER OF PAGE )" << endl;
+        border();
+        cout << setw(size7) << "Page " << page_in << " OF " << page_end << endl;
+        cout << setw(size8) << "( INPUT Character [X] in Item Code For Exit { OR } INPUT NUMBER OF PAGE )" << endl;
         cout << endl;
-        cout << setw(110) << "Command : ";
+        cout << setw(size9) << "Command : ";
         string code;
         cin >> code;
         if (code == "X" || code == "x")
@@ -1710,7 +1802,11 @@ void Displays(int show)
             loop_show_member_list = 0;
             page_in = 1;
             system("clear");
-            cout << border << title_bar << border << show_manu << border;
+            border();
+            title_bar();
+            border();
+            show_manu();
+            border();
             goto jump;
         }
         else
@@ -1718,10 +1814,14 @@ void Displays(int show)
             if (code[0] == '1' || code[0] == '2' || code[0] == '3' || code[0] == '4' || code[0] == '5' || code[0] == '6' || code[0] == '7' || code[0] == '8' || code[0] == '9' || code[0] == '0')
             {
 
-                loop_show_member_list = (40 * stoi(code)-40);
+                loop_show_member_list = (40 * stoi(code) - 40);
                 page_in = stoi(code);
                 system("clear");
-                cout << border << title_bar << border << show_manu << border;
+                border();
+                title_bar();
+                border();
+                show_manu();
+                border();
                 goto jump;
             }
         }
