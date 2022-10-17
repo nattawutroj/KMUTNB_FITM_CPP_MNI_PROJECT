@@ -1487,6 +1487,7 @@ void Displays(int show)
     string list = "=                                                   =                                                                                                 =                               =                                                     =\n";
     string header = "=                  ITEM NO.                         =                                       NAME ITEM                                                 =           Quantity            =                   ITEM PRICE (Baht)                 =\n";
     string header_add_item = "=                  ITEM NO.                         =                                       NAME ITEM                                                 =                   ITEM PRICE (Baht)                 =           Status            =\n";
+    string member_list_show = "=                 MEMBER PHONE                      =                                       MEMBER NAME                                               =           MEMBER POINT                              =           Status            =\n";
     cout << border << title_bar << border << show_manu << border;
     if (show == 1)
     {
@@ -1554,11 +1555,11 @@ void Displays(int show)
         reset_component();
         Displays(1);
     }
-    else if(show == 3)
+    else if (show == 3)
     {
         cout << border << endl;
-        cout << setw(125)<<" Register Member" << endl;
-        cout <<endl;
+        cout << setw(125) << " Register Member" << endl;
+        cout << endl;
         cout << setw(100) << "Name : ";
         string name;
         cin >> name;
@@ -1568,11 +1569,11 @@ void Displays(int show)
         cout << setw(100) << "Confirm ? (Y/N) : ";
         string confirm;
         cin >> confirm;
-        if(confirm == "Y" || confirm == "y")
+        if (confirm == "Y" || confirm == "y")
         {
             int loop = 0;
             string dummy;
-            while(member[loop][0] != dummy)
+            while (member[loop][0] != dummy)
             {
                 loop++;
             }
@@ -1597,11 +1598,11 @@ void Displays(int show)
             Displays(1);
         }
     }
-    else if(show == 4)
+    else if (show == 4)
     {
         int loop_add = 0;
         string dummy;
-        while(item[loop_add][0] != dummy)
+        while (item[loop_add][0] != dummy)
         {
             component[loop_add][0] = item[loop_add][0];
             component[loop_add][1] = item[loop_add][1];
@@ -1622,7 +1623,7 @@ void Displays(int show)
         cout << setw(100) << "Item Code : ";
         string code;
         cin >> code;
-        if(code == "X" || code == "x")
+        if (code == "X" || code == "x")
         {
             reset_component();
             Displays(1);
@@ -1633,14 +1634,14 @@ void Displays(int show)
         cout << setw(100) << "Item Price : ";
         string price;
         cin >> price;
-        item[loop_add][0] = code;
-        item[loop_add][1] = name;
-        item[loop_add][2] = price;
         cout << " Confirm ? (Y/N) : ";
         string confirm;
         cin >> confirm;
-        if(confirm == "Y" || confirm == "y")
+        if (confirm == "Y" || confirm == "y")
         {
+            item[loop_add][0] = code;
+            item[loop_add][1] = name;
+            item[loop_add][2] = price;
             write_file_item();
             read_file_item();
             cout << border << endl;
@@ -1661,7 +1662,69 @@ void Displays(int show)
             reset_component();
             Displays(4);
         }
+    }
+    else if (show == 5)
+    {
+        int page_in = 1;
+        int page_end;
+        int loop_member = 0;
+        string dummy;
+        while (member[loop_member][0] != dummy)
+        {
+            component[loop_member][0] = member[loop_member][0];
+            component[loop_member][1] = member[loop_member][1];
+            component[loop_member][2] = member[loop_member][2];
+            component[loop_member][3] = "Confirm";
+            loop_member++;
+        }
+        if(loop_member % 40 == 0)
+        {
+            page_end = loop_member / 40;
+        }
+        else
+        {
+            page_end = (loop_member / 40) + 1;
+        }
+        int loop_show_member_list = 0;
+    jump:
+        cout << member_list_show << border;
+        while (loop_show_member_list <= 40 * page_in)
+        {
+            cout << "=" << setw(26) << component[loop_show_member_list][0] << setw(26) << "=" << setw(49) << component[loop_show_member_list][1] << setw(49) << "=" << setw(27) << component[loop_show_member_list][2] << setw(27) << "=" << setw(16) << component[loop_show_member_list][3] << setw(16) << "=" << endl;
+            loop_show_member_list++;
+        }
+        cout << border << endl;
+        cout << setw(125) << "Page " << page_in << " OF " << page_end << endl;
+        cout << setw(160) << "( INPUT Character [X] in Item Code For Exit { OR } INPUT NUMBER OF PAGE )" << endl;
+        cout << endl;
+        cout << setw(110) << "Command : ";
+        string code;
+        cin >> code;
+        if (code == "X" || code == "x")
+        {
+            reset_component();
+            Displays(1);
+        }
+        else if (code == "1")
+        {
+            loop_show_member_list = 0;
+            page_in = 1;
+            system("clear");
+            cout << border << title_bar << border << show_manu << border;
+            goto jump;
+        }
+        else
+        {
+            if (code[0] == '1' || code[0] == '2' || code[0] == '3' || code[0] == '4' || code[0] == '5' || code[0] == '6' || code[0] == '7' || code[0] == '8' || code[0] == '9' || code[0] == '0')
+            {
 
+                loop_show_member_list = (40 * stoi(code)-40);
+                page_in = stoi(code);
+                system("clear");
+                cout << border << title_bar << border << show_manu << border;
+                goto jump;
+            }
+        }
     }
 }
 void Sell()
@@ -1682,6 +1745,11 @@ void Sell()
     {
         reset_component();
         Displays(2);
+    }
+    else if (command == "m" || command == "M" || command == ".memberlist")
+    {
+        reset_component();
+        Displays(5);
     }
     else
     {
@@ -1719,7 +1787,7 @@ void Process_sell_memeber(string phone)
     {
         if (member[loop][0] == phone)
         {
-            component[200][1] = member[loop][1]; 
+            component[200][1] = member[loop][1];
             component[200][2] = member[loop][2];
         }
         loop++;
