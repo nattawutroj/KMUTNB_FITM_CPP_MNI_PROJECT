@@ -10,25 +10,27 @@ string component[1000][10];
 string item[1000][3];
 string member[1000][3];
 // set size Display
-int size1 = 38;   // size of component Def = 38
-int size2 = 26;   // size of item Def = 26
-int size3 = 49;   // size of member Def = 49
-int size4 = 16;   // size of component Def = 16
-int size5 = 27;   // size of item Def = 27
-int size6 = 100;  // size of member Def = 100
-int size7 = 125;  // size of member Def = 125
-int size8 = 160;  // size of member Def = 160
-int size9 = 110;  // size of member Def = 110
-int size10 = 237; // size of member Def = 237
-int size11 = 118; // size of member Def = 118
-int size12 = 170; // size of member Def = 170
-int size13 = 52;  // size of member Def = 52
-int size14 = 98;  // size of member Def = 98
-int size15 = 32;  // size of member Def = 32
-int size16 = 54;  // size of member Def = 54
+int size1 = 38;     // size of component Def = 38
+int size2 = 26;     // size of item Def = 26
+int size3 = 49;     // size of member Def = 49
+int size4 = 16;     // size of component Def = 16
+int size5 = 27;     // size of item Def = 27
+int size6 = 100;    // size of member Def = 100
+int size7 = 125;    // size of member Def = 125
+int size8 = 160;    // size of member Def = 160
+int size9 = 110;    // size of member Def = 110
+int size10 = 237;   // size of member Def = 237
+int size11 = 118;   // size of member Def = 118
+int size12 = 170;   // size of member Def = 170
+int size13 = 52;    // size of member Def = 52
+int size14 = 98;    // size of member Def = 98
+int size15 = 32;    // size of member Def = 32
+int size16 = 54;    // size of member Def = 54
+int Big_num = 36;   // size of component Def = 36
+int line_show = 40; // size of component Def = line_show
+// ----------------
 
-int Big_num = 36; // size of component Def = 36
-
+// os detect
 // ----------------
 int sum = 0;
 int Process_sell_change(string money);
@@ -63,26 +65,27 @@ void set_size();
 string Big_num_con(string num)
 {
     string show = "";
-    if(num == "T")
+    if (num == "T")
     {
-        for(int l = 0; l < Big_num; l++)
+        for (int l = 0; l < Big_num; l++)
         {
             show += "*";
         }
     }
-    else if(num == "L")
+    else if (num == "L")
     {
         int Temp1;
         int Temp2;
         int Temp3;
-        if(Big_num % 3 != 0)
+        if (Big_num % 3 != 0)
         {
             Temp1 = Big_num / 3;
             Temp2 = Big_num / 3;
             Temp3 = Big_num / 3;
-            do{
+            do
+            {
                 Temp1++;
-            }while(Temp1+Temp2+Temp3 != Big_num);
+            } while (Temp1 + Temp2 + Temp3 != Big_num);
         }
         else
         {
@@ -90,32 +93,33 @@ string Big_num_con(string num)
             Temp2 = Big_num / 3;
             Temp3 = Big_num / 3;
         }
-        for(int l = 0; l < Temp1; l++)
+        for (int l = 0; l < Temp1; l++)
         {
             show += "*";
         }
-        for(int l = 0; l < Temp2; l++)
+        for (int l = 0; l < Temp2; l++)
         {
             show += " ";
         }
-        for(int l = 0; l < Temp3; l++)
+        for (int l = 0; l < Temp3; l++)
         {
             show += " ";
         }
     }
-    else if(num == "M")
+    else if (num == "M")
     {
-                int Temp1;
+        int Temp1;
         int Temp2;
         int Temp3;
-        if(Big_num % 3 != 0)
+        if (Big_num % 3 != 0)
         {
             Temp1 = Big_num / 3;
             Temp2 = Big_num / 3;
             Temp3 = Big_num / 3;
-            do{
+            do
+            {
                 Temp2++;
-            }while(Temp1+Temp2+Temp3 != Big_num);
+            } while (Temp1 + Temp2 + Temp3 != Big_num);
         }
         else
         {
@@ -123,32 +127,33 @@ string Big_num_con(string num)
             Temp2 = Big_num / 3;
             Temp3 = Big_num / 3;
         }
-        for(int l = 0; l < Temp1; l++)
+        for (int l = 0; l < Temp1; l++)
         {
             show += " ";
         }
-        for(int l = 0; l < Temp2; l++)
+        for (int l = 0; l < Temp2; l++)
         {
             show += "*";
         }
-        for(int l = 0; l < Temp3; l++)
+        for (int l = 0; l < Temp3; l++)
         {
             show += " ";
         }
     }
-    else if(num == "R")
+    else if (num == "R")
     {
-                int Temp1;
+        int Temp1;
         int Temp2;
         int Temp3;
-        if(Big_num % 3 != 0)
+        if (Big_num % 3 != 0)
         {
             Temp1 = Big_num / 3;
             Temp2 = Big_num / 3;
             Temp3 = Big_num / 3;
-            do{
+            do
+            {
                 Temp3++;
-            }while(Temp1+Temp2+Temp3 != Big_num);
+            } while (Temp1 + Temp2 + Temp3 != Big_num);
         }
         else
         {
@@ -156,32 +161,33 @@ string Big_num_con(string num)
             Temp2 = Big_num / 3;
             Temp3 = Big_num / 3;
         }
-        for(int l = 0; l < Temp1; l++)
+        for (int l = 0; l < Temp1; l++)
         {
             show += " ";
         }
-        for(int l = 0; l < Temp2; l++)
+        for (int l = 0; l < Temp2; l++)
         {
             show += " ";
         }
-        for(int l = 0; l < Temp3; l++)
+        for (int l = 0; l < Temp3; l++)
         {
             show += "*";
         }
     }
     else if (num == "V")
     {
-                        int Temp1;
+        int Temp1;
         int Temp2;
         int Temp3;
-        if(Big_num % 3 != 0)
+        if (Big_num % 3 != 0)
         {
             Temp1 = Big_num / 3;
             Temp2 = Big_num / 3;
             Temp3 = Big_num / 3;
-            do{
+            do
+            {
                 Temp2++;
-            }while(Temp1+Temp2+Temp3 != Big_num);
+            } while (Temp1 + Temp2 + Temp3 != Big_num);
         }
         else
         {
@@ -189,22 +195,22 @@ string Big_num_con(string num)
             Temp2 = Big_num / 3;
             Temp3 = Big_num / 3;
         }
-        for(int l = 0; l < Temp1; l++)
+        for (int l = 0; l < Temp1; l++)
         {
             show += "*";
         }
-        for(int l = 0; l < Temp2; l++)
+        for (int l = 0; l < Temp2; l++)
         {
             show += " ";
         }
-        for(int l = 0; l < Temp3; l++)
+        for (int l = 0; l < Temp3; l++)
         {
             show += "*";
         }
     }
-    else if(num == "O")
+    else if (num == "O")
     {
-        for(int l = 0; l < Big_num; l++)
+        for (int l = 0; l < Big_num; l++)
         {
             show += " ";
         }
@@ -267,6 +273,7 @@ void set_size()
     size15 = (size15 * percen) / 100;
     size16 = (size16 * percen) / 100;
     Big_num = (Big_num * percen) / 100;
+    line_show = (line_show * percen) / 100;
 }
 int main()
 {
@@ -1719,15 +1726,11 @@ void read_file_member()
 }
 void Displays(int show)
 {
-    system("clear");
-    // string border = "=============================================================================================================================================================================================================================================\n";
-    // string title_bar = "=                                                                                                             WELLCOME PEEWINWASH                                                                                                           =\n";
-    // string show_manu = "        [A]dd Item    [R]ergister member    [S]ell    [M]ember list                                                                                                                                                                         =\n";
-    // string list = "=                                                   =                                                                                                 =                               =                                                     =\n";
-    // string header = "=                  ITEM NO.                         =                                       NAME ITEM                                                 =           Quantity            =                   ITEM PRICE (Baht)                 =\n";
-    // string header_add_item = "=                  ITEM NO.                         =                                       NAME ITEM                                                 =                   ITEM PRICE (Baht)                 =           Status            =\n";
-    // string member_list_show = "=                 MEMBER PHONE                      =                                       MEMBER NAME                                               =           MEMBER POINT                              =           Status            =\n";
-    // cout << border << title_bar << border << show_manu << border;
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
     border();
     title_bar();
     border();
@@ -1738,7 +1741,7 @@ void Displays(int show)
         header();
         border();
         int loop = 0;
-        while (loop <= 40)
+        while (loop <= line_show)
         {
             cout << "=" << setw(size2) << component[loop][0] << setw(size2) << "=" << setw(size3) << component[loop][1] << setw(size3) << "=" << setw(size4) << component[loop][3] << setw(size4) << "=" << setw(size5) << component[loop][2] << setw(size5) << "=" << endl;
             loop++;
@@ -1859,7 +1862,7 @@ void Displays(int show)
         header_add_item();
         border();
         int loop = 0;
-        while (loop <= 40)
+        while (loop <= line_show)
         {
             cout << "=" << setw(size2) << component[loop][0] << setw(size2) << "=" << setw(size3) << component[loop][1] << setw(size3) << "=" << setw(size5) << component[loop][2] << setw(size5) << "=" << setw(size4) << component[loop][3] << setw(size4) << "=" << endl;
             loop++;
@@ -1924,19 +1927,19 @@ void Displays(int show)
             component[loop_member][3] = "Confirm";
             loop_member++;
         }
-        if (loop_member % 40 == 0)
+        if (loop_member % line_show == 0)
         {
-            page_end = loop_member / 40;
+            page_end = loop_member / line_show;
         }
         else
         {
-            page_end = (loop_member / 40) + 1;
+            page_end = (loop_member / line_show) + 1;
         }
         int loop_show_member_list = 0;
     jump:
         member_list_show();
         border();
-        while (loop_show_member_list <= 40 * page_in)
+        while (loop_show_member_list <= line_show * page_in)
         {
             cout << "=" << setw(size2) << component[loop_show_member_list][0] << setw(size2) << "=" << setw(size3) << component[loop_show_member_list][1] << setw(size3) << "=" << setw(size5) << component[loop_show_member_list][2] << setw(size5) << "=" << setw(size4) << component[loop_show_member_list][3] << setw(size4) << "=" << endl;
             loop_show_member_list++;
@@ -1957,7 +1960,11 @@ void Displays(int show)
         {
             loop_show_member_list = 0;
             page_in = 1;
-            system("clear");
+            #ifdef _WIN32
+                system("cls");
+            #else
+                system("clear");
+            #endif
             border();
             title_bar();
             border();
@@ -1970,9 +1977,13 @@ void Displays(int show)
             if (code[0] == '1' || code[0] == '2' || code[0] == '3' || code[0] == '4' || code[0] == '5' || code[0] == '6' || code[0] == '7' || code[0] == '8' || code[0] == '9' || code[0] == '0')
             {
 
-                loop_show_member_list = (40 * stoi(code) - 40);
+                loop_show_member_list = (line_show * stoi(code) - line_show);
                 page_in = stoi(code);
-                system("clear");
+                #ifdef _WIN32
+                    system("cls");
+                #else
+                    system("clear");
+                #endif
                 border();
                 title_bar();
                 border();
