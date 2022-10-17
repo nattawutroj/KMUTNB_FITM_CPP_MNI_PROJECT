@@ -27,9 +27,12 @@ int size14 = 98;  // size of member Def = 98
 int size15 = 32;  // size of member Def = 32
 int size16 = 54;  // size of member Def = 54
 
+int Big_num = 36; // size of component Def = 36
+
 // ----------------
 int sum = 0;
 int Process_sell_change(string money);
+string Big_num_con(string num);
 void border();
 void title_bar();
 void show_manu();
@@ -57,6 +60,158 @@ void Display_Price_Position_5(int dis_p);
 void Display_Price_Position_6(int dis_p);
 void convert(int D);
 void set_size();
+string Big_num_con(string num)
+{
+    string show = "";
+    if(num == "T")
+    {
+        for(int l = 0; l < Big_num; l++)
+        {
+            show += "*";
+        }
+    }
+    else if(num == "L")
+    {
+        int Temp1;
+        int Temp2;
+        int Temp3;
+        if(Big_num % 3 != 0)
+        {
+            Temp1 = Big_num / 3;
+            Temp2 = Big_num / 3;
+            Temp3 = Big_num / 3;
+            do{
+                Temp1++;
+            }while(Temp1+Temp2+Temp3 != Big_num);
+        }
+        else
+        {
+            Temp1 = Big_num / 3;
+            Temp2 = Big_num / 3;
+            Temp3 = Big_num / 3;
+        }
+        for(int l = 0; l < Temp1; l++)
+        {
+            show += "*";
+        }
+        for(int l = 0; l < Temp2; l++)
+        {
+            show += " ";
+        }
+        for(int l = 0; l < Temp3; l++)
+        {
+            show += " ";
+        }
+    }
+    else if(num == "M")
+    {
+                int Temp1;
+        int Temp2;
+        int Temp3;
+        if(Big_num % 3 != 0)
+        {
+            Temp1 = Big_num / 3;
+            Temp2 = Big_num / 3;
+            Temp3 = Big_num / 3;
+            do{
+                Temp2++;
+            }while(Temp1+Temp2+Temp3 != Big_num);
+        }
+        else
+        {
+            Temp1 = Big_num / 3;
+            Temp2 = Big_num / 3;
+            Temp3 = Big_num / 3;
+        }
+        for(int l = 0; l < Temp1; l++)
+        {
+            show += " ";
+        }
+        for(int l = 0; l < Temp2; l++)
+        {
+            show += "*";
+        }
+        for(int l = 0; l < Temp3; l++)
+        {
+            show += " ";
+        }
+    }
+    else if(num == "R")
+    {
+                int Temp1;
+        int Temp2;
+        int Temp3;
+        if(Big_num % 3 != 0)
+        {
+            Temp1 = Big_num / 3;
+            Temp2 = Big_num / 3;
+            Temp3 = Big_num / 3;
+            do{
+                Temp3++;
+            }while(Temp1+Temp2+Temp3 != Big_num);
+        }
+        else
+        {
+            Temp1 = Big_num / 3;
+            Temp2 = Big_num / 3;
+            Temp3 = Big_num / 3;
+        }
+        for(int l = 0; l < Temp1; l++)
+        {
+            show += " ";
+        }
+        for(int l = 0; l < Temp2; l++)
+        {
+            show += " ";
+        }
+        for(int l = 0; l < Temp3; l++)
+        {
+            show += "*";
+        }
+    }
+    else if (num == "V")
+    {
+                        int Temp1;
+        int Temp2;
+        int Temp3;
+        if(Big_num % 3 != 0)
+        {
+            Temp1 = Big_num / 3;
+            Temp2 = Big_num / 3;
+            Temp3 = Big_num / 3;
+            do{
+                Temp2++;
+            }while(Temp1+Temp2+Temp3 != Big_num);
+        }
+        else
+        {
+            Temp1 = Big_num / 3;
+            Temp2 = Big_num / 3;
+            Temp3 = Big_num / 3;
+        }
+        for(int l = 0; l < Temp1; l++)
+        {
+            show += "*";
+        }
+        for(int l = 0; l < Temp2; l++)
+        {
+            show += " ";
+        }
+        for(int l = 0; l < Temp3; l++)
+        {
+            show += "*";
+        }
+    }
+    else if(num == "O")
+    {
+        for(int l = 0; l < Big_num; l++)
+        {
+            show += " ";
+        }
+    }
+
+    return show;
+}
 void member_list_show()
 {
     cout << "=" << setw(size2) << "MEMBER PHONE" << setw(size2) << "=" << setw(size3) << "MEMBER NAME" << setw(size3) << "=" << setw(size5) << "MEMBER POINT" << setw(size5) << "=" << setw(size4) << "Status" << setw(size4) << "=" << endl;
@@ -93,7 +248,7 @@ void border()
 void set_size()
 {
     int percen;
-    cout << "Set size of component 50 - 100 : ";
+    cout << "Set size of component (best Recomant Between 72 - 100) : ";
     cin >> percen;
     size1 = (size1 * percen) / 100;
     size2 = (size2 * percen) / 100;
@@ -111,6 +266,7 @@ void set_size()
     size14 = (size14 * percen) / 100;
     size15 = (size15 * percen) / 100;
     size16 = (size16 * percen) / 100;
+    Big_num = (Big_num * percen) / 100;
 }
 int main()
 {
@@ -193,1272 +349,1272 @@ void Display_Price_Position_1(int dis_p)
 {
     if (dis_p == 0)
     {
-        component[500][0] = "************************************";
-        component[501][0] = "************************************";
-        component[502][0] = "***********              ***********";
-        component[503][0] = "***********              ***********";
-        component[504][0] = "***********              ***********";
-        component[505][0] = "***********              ***********";
-        component[506][0] = "***********              ***********";
-        component[507][0] = "***********              ***********";
-        component[508][0] = "***********              ***********";
-        component[509][0] = "***********              ***********";
-        component[510][0] = "***********              ***********";
-        component[511][0] = "***********              ***********";
-        component[512][0] = "***********              ***********";
-        component[513][0] = "***********              ***********";
-        component[514][0] = "************************************";
-        component[515][0] = "************************************";
+        component[500][0] = Big_num_con("T");
+        component[501][0] = Big_num_con("T");
+        component[502][0] = Big_num_con("V");
+        component[503][0] = Big_num_con("V");
+        component[504][0] = Big_num_con("V");
+        component[505][0] = Big_num_con("V");
+        component[506][0] = Big_num_con("V");
+        component[507][0] = Big_num_con("V");
+        component[508][0] = Big_num_con("V");
+        component[509][0] = Big_num_con("V");
+        component[510][0] = Big_num_con("V");
+        component[511][0] = Big_num_con("V");
+        component[512][0] = Big_num_con("V");
+        component[513][0] = Big_num_con("V");
+        component[514][0] = Big_num_con("T");
+        component[515][0] = Big_num_con("T");
     }
     else if (dis_p == 1)
     {
-        component[500][0] = "                         ***********";
-        component[501][0] = "                         ***********";
-        component[502][0] = "                         ***********";
-        component[503][0] = "                         ***********";
-        component[504][0] = "                         ***********";
-        component[505][0] = "                         ***********";
-        component[506][0] = "                         ***********";
-        component[507][0] = "                         ***********";
-        component[508][0] = "                         ***********";
-        component[509][0] = "                         ***********";
-        component[510][0] = "                         ***********";
-        component[511][0] = "                         ***********";
-        component[512][0] = "                         ***********";
-        component[513][0] = "                         ***********";
-        component[514][0] = "                         ***********";
-        component[515][0] = "                         ***********";
+        component[500][0] = Big_num_con("R");
+        component[501][0] = Big_num_con("R");
+        component[502][0] = Big_num_con("R");
+        component[503][0] = Big_num_con("R");
+        component[504][0] = Big_num_con("R");
+        component[505][0] = Big_num_con("R");
+        component[506][0] = Big_num_con("R");
+        component[507][0] = Big_num_con("R");
+        component[508][0] = Big_num_con("R");
+        component[509][0] = Big_num_con("R");
+        component[510][0] = Big_num_con("R");
+        component[511][0] = Big_num_con("R");
+        component[512][0] = Big_num_con("R");
+        component[513][0] = Big_num_con("R");
+        component[514][0] = Big_num_con("R");
+        component[515][0] = Big_num_con("R");
     }
     else if (dis_p == 2)
     {
-        component[500][0] = "************************************";
-        component[501][0] = "************************************";
-        component[502][0] = "************************************";
-        component[503][0] = "                         ***********";
-        component[504][0] = "                         ***********";
-        component[505][0] = "                         ***********";
-        component[506][0] = "************************************";
-        component[507][0] = "************************************";
-        component[508][0] = "************************************";
-        component[509][0] = "************************************";
-        component[510][0] = "***********                         ";
-        component[511][0] = "***********                         ";
-        component[512][0] = "***********                         ";
-        component[513][0] = "************************************";
-        component[514][0] = "************************************";
-        component[515][0] = "************************************";
+        component[500][0] = Big_num_con("T");
+        component[501][0] = Big_num_con("T");
+        component[502][0] = Big_num_con("T");
+        component[503][0] = Big_num_con("R");
+        component[504][0] = Big_num_con("R");
+        component[505][0] = Big_num_con("R");
+        component[506][0] = Big_num_con("T");
+        component[507][0] = Big_num_con("T");
+        component[508][0] = Big_num_con("T");
+        component[509][0] = Big_num_con("T");
+        component[510][0] = Big_num_con("L");
+        component[511][0] = Big_num_con("L");
+        component[512][0] = Big_num_con("L");
+        component[513][0] = Big_num_con("T");
+        component[514][0] = Big_num_con("T");
+        component[515][0] = Big_num_con("T");
     }
     else if (dis_p == 3)
     {
-        component[500][0] = "************************************";
-        component[501][0] = "************************************";
-        component[502][0] = "************************************";
-        component[503][0] = "                         ***********";
-        component[504][0] = "                         ***********";
-        component[505][0] = "                         ***********";
-        component[506][0] = "************************************";
-        component[507][0] = "************************************";
-        component[508][0] = "************************************";
-        component[509][0] = "                         ***********";
-        component[510][0] = "                         ***********";
-        component[511][0] = "                         ***********";
-        component[512][0] = "************************************";
-        component[513][0] = "************************************";
-        component[514][0] = "************************************";
-        component[515][0] = "************************************";
+        component[500][0] = Big_num_con("T");
+        component[501][0] = Big_num_con("T");
+        component[502][0] = Big_num_con("T");
+        component[503][0] = Big_num_con("R");
+        component[504][0] = Big_num_con("R");
+        component[505][0] = Big_num_con("R");
+        component[506][0] = Big_num_con("T");
+        component[507][0] = Big_num_con("T");
+        component[508][0] = Big_num_con("T");
+        component[509][0] = Big_num_con("R");
+        component[510][0] = Big_num_con("R");
+        component[511][0] = Big_num_con("R");
+        component[512][0] = Big_num_con("T");
+        component[513][0] = Big_num_con("T");
+        component[514][0] = Big_num_con("T");
+        component[515][0] = Big_num_con("T");
     }
     else if (dis_p == 4)
     {
-        component[500][0] = "***********              ***********";
-        component[501][0] = "***********              ***********";
-        component[502][0] = "***********              ***********";
-        component[503][0] = "***********              ***********";
-        component[504][0] = "***********              ***********";
-        component[505][0] = "***********              ***********";
-        component[506][0] = "************************************";
-        component[507][0] = "************************************";
-        component[508][0] = "************************************";
-        component[509][0] = "                         ***********";
-        component[510][0] = "                         ***********";
-        component[511][0] = "                         ***********";
-        component[512][0] = "                         ***********";
-        component[513][0] = "                         ***********";
-        component[514][0] = "                         ***********";
-        component[515][0] = "                         ***********";
+        component[500][0] = Big_num_con("V");
+        component[501][0] = Big_num_con("V");
+        component[502][0] = Big_num_con("V");
+        component[503][0] = Big_num_con("V");
+        component[504][0] = Big_num_con("V");
+        component[505][0] = Big_num_con("V");
+        component[506][0] = Big_num_con("T");
+        component[507][0] = Big_num_con("T");
+        component[508][0] = Big_num_con("T");
+        component[509][0] = Big_num_con("R");
+        component[510][0] = Big_num_con("R");
+        component[511][0] = Big_num_con("R");
+        component[512][0] = Big_num_con("R");
+        component[513][0] = Big_num_con("R");
+        component[514][0] = Big_num_con("R");
+        component[515][0] = Big_num_con("R");
     }
     else if (dis_p == 5)
     {
-        component[500][0] = "************************************";
-        component[501][0] = "************************************";
-        component[502][0] = "************************************";
-        component[503][0] = "***********                         ";
-        component[504][0] = "***********                         ";
-        component[505][0] = "***********                         ";
-        component[506][0] = "************************************";
-        component[507][0] = "************************************";
-        component[508][0] = "************************************";
-        component[509][0] = "                         ***********";
-        component[510][0] = "                         ***********";
-        component[511][0] = "                         ***********";
-        component[512][0] = "************************************";
-        component[513][0] = "************************************";
-        component[514][0] = "************************************";
-        component[515][0] = "************************************";
+        component[500][0] = Big_num_con("T");
+        component[501][0] = Big_num_con("T");
+        component[502][0] = Big_num_con("T");
+        component[503][0] = Big_num_con("L");
+        component[504][0] = Big_num_con("L");
+        component[505][0] = Big_num_con("L");
+        component[506][0] = Big_num_con("T");
+        component[507][0] = Big_num_con("T");
+        component[508][0] = Big_num_con("T");
+        component[509][0] = Big_num_con("R");
+        component[510][0] = Big_num_con("R");
+        component[511][0] = Big_num_con("R");
+        component[512][0] = Big_num_con("T");
+        component[513][0] = Big_num_con("T");
+        component[514][0] = Big_num_con("T");
+        component[515][0] = Big_num_con("T");
     }
     else if (dis_p == 6)
     {
-        component[500][0] = "************************************";
-        component[501][0] = "************************************";
-        component[502][0] = "************************************";
-        component[503][0] = "***********                         ";
-        component[504][0] = "***********                         ";
-        component[505][0] = "***********                         ";
-        component[506][0] = "************************************";
-        component[507][0] = "************************************";
-        component[508][0] = "************************************";
-        component[509][0] = "***********              ***********";
-        component[510][0] = "***********              ***********";
-        component[511][0] = "***********              ***********";
-        component[512][0] = "***********              ***********";
-        component[513][0] = "***********              ***********";
-        component[514][0] = "************************************";
-        component[515][0] = "************************************";
+        component[500][0] = Big_num_con("T");
+        component[501][0] = Big_num_con("T");
+        component[502][0] = Big_num_con("T");
+        component[503][0] = Big_num_con("L");
+        component[504][0] = Big_num_con("L");
+        component[505][0] = Big_num_con("L");
+        component[506][0] = Big_num_con("T");
+        component[507][0] = Big_num_con("T");
+        component[508][0] = Big_num_con("T");
+        component[509][0] = Big_num_con("V");
+        component[510][0] = Big_num_con("V");
+        component[511][0] = Big_num_con("V");
+        component[512][0] = Big_num_con("V");
+        component[513][0] = Big_num_con("V");
+        component[514][0] = Big_num_con("T");
+        component[515][0] = Big_num_con("T");
     }
     else if (dis_p == 7)
     {
-        component[500][0] = "************************************";
-        component[501][0] = "************************************";
-        component[502][0] = "************************************";
-        component[503][0] = "                         ***********";
-        component[504][0] = "                         ***********";
-        component[505][0] = "                         ***********";
-        component[506][0] = "                         ***********";
-        component[507][0] = "                         ***********";
-        component[508][0] = "                         ***********";
-        component[509][0] = "                         ***********";
-        component[510][0] = "                         ***********";
-        component[511][0] = "                         ***********";
-        component[512][0] = "                         ***********";
-        component[513][0] = "                         ***********";
-        component[514][0] = "                         ***********";
-        component[515][0] = "                         ***********";
+        component[500][0] = Big_num_con("T");
+        component[501][0] = Big_num_con("T");
+        component[502][0] = Big_num_con("T");
+        component[503][0] = Big_num_con("R");
+        component[504][0] = Big_num_con("R");
+        component[505][0] = Big_num_con("R");
+        component[506][0] = Big_num_con("R");
+        component[507][0] = Big_num_con("R");
+        component[508][0] = Big_num_con("R");
+        component[509][0] = Big_num_con("R");
+        component[510][0] = Big_num_con("R");
+        component[511][0] = Big_num_con("R");
+        component[512][0] = Big_num_con("R");
+        component[513][0] = Big_num_con("R");
+        component[514][0] = Big_num_con("R");
+        component[515][0] = Big_num_con("R");
     }
     else if (dis_p == 8)
     {
-        component[500][0] = "************************************";
-        component[501][0] = "************************************";
-        component[502][0] = "************************************";
-        component[503][0] = "***********              ***********";
-        component[504][0] = "***********              ***********";
-        component[505][0] = "***********              ***********";
-        component[506][0] = "************************************";
-        component[507][0] = "************************************";
-        component[508][0] = "************************************";
-        component[509][0] = "***********              ***********";
-        component[510][0] = "***********              ***********";
-        component[511][0] = "***********              ***********";
-        component[512][0] = "***********              ***********";
-        component[513][0] = "***********              ***********";
-        component[514][0] = "************************************";
-        component[515][0] = "************************************";
+        component[500][0] = Big_num_con("T");
+        component[501][0] = Big_num_con("T");
+        component[502][0] = Big_num_con("T");
+        component[503][0] = Big_num_con("V");
+        component[504][0] = Big_num_con("V");
+        component[505][0] = Big_num_con("V");
+        component[506][0] = Big_num_con("T");
+        component[507][0] = Big_num_con("T");
+        component[508][0] = Big_num_con("T");
+        component[509][0] = Big_num_con("V");
+        component[510][0] = Big_num_con("V");
+        component[511][0] = Big_num_con("V");
+        component[512][0] = Big_num_con("V");
+        component[513][0] = Big_num_con("V");
+        component[514][0] = Big_num_con("T");
+        component[515][0] = Big_num_con("T");
     }
     else if (dis_p == 9)
     {
-        component[500][0] = "************************************";
-        component[501][0] = "************************************";
-        component[502][0] = "************************************";
-        component[503][0] = "***********              ***********";
-        component[504][0] = "***********              ***********";
-        component[505][0] = "***********              ***********";
-        component[506][0] = "************************************";
-        component[507][0] = "************************************";
-        component[508][0] = "************************************";
-        component[509][0] = "                         ***********";
-        component[510][0] = "                         ***********";
-        component[511][0] = "                         ***********";
-        component[512][0] = "************************************";
-        component[513][0] = "************************************";
-        component[514][0] = "************************************";
-        component[515][0] = "************************************";
+        component[500][0] = Big_num_con("T");
+        component[501][0] = Big_num_con("T");
+        component[502][0] = Big_num_con("T");
+        component[503][0] = Big_num_con("V");
+        component[504][0] = Big_num_con("V");
+        component[505][0] = Big_num_con("V");
+        component[506][0] = Big_num_con("T");
+        component[507][0] = Big_num_con("T");
+        component[508][0] = Big_num_con("T");
+        component[509][0] = Big_num_con("R");
+        component[510][0] = Big_num_con("R");
+        component[511][0] = Big_num_con("R");
+        component[512][0] = Big_num_con("T");
+        component[513][0] = Big_num_con("T");
+        component[514][0] = Big_num_con("T");
+        component[515][0] = Big_num_con("T");
     }
     else
     {
-        component[500][0] = "                                    ";
-        component[501][0] = "                                    ";
-        component[502][0] = "                                    ";
-        component[503][0] = "                                    ";
-        component[504][0] = "                                    ";
-        component[505][0] = "                                    ";
-        component[506][0] = "                                    ";
-        component[507][0] = "                                    ";
-        component[508][0] = "                                    ";
-        component[509][0] = "                                    ";
-        component[510][0] = "                                    ";
-        component[511][0] = "                                    ";
-        component[512][0] = "                                    ";
-        component[513][0] = "                                    ";
-        component[514][0] = "                                    ";
-        component[515][0] = "                                    ";
+        component[500][0] = Big_num_con("O");
+        component[501][0] = Big_num_con("O");
+        component[502][0] = Big_num_con("O");
+        component[503][0] = Big_num_con("O");
+        component[504][0] = Big_num_con("O");
+        component[505][0] = Big_num_con("O");
+        component[506][0] = Big_num_con("O");
+        component[507][0] = Big_num_con("O");
+        component[508][0] = Big_num_con("O");
+        component[509][0] = Big_num_con("O");
+        component[510][0] = Big_num_con("O");
+        component[511][0] = Big_num_con("O");
+        component[512][0] = Big_num_con("O");
+        component[513][0] = Big_num_con("O");
+        component[514][0] = Big_num_con("O");
+        component[515][0] = Big_num_con("O");
     }
 }
 void Display_Price_Position_2(int dis_p)
 {
     if (dis_p == 0)
     {
-        component[500][1] = "************************************";
-        component[501][1] = "************************************";
-        component[502][1] = "***********              ***********";
-        component[503][1] = "***********              ***********";
-        component[504][1] = "***********              ***********";
-        component[505][1] = "***********              ***********";
-        component[506][1] = "***********              ***********";
-        component[507][1] = "***********              ***********";
-        component[508][1] = "***********              ***********";
-        component[509][1] = "***********              ***********";
-        component[510][1] = "***********              ***********";
-        component[511][1] = "***********              ***********";
-        component[512][1] = "***********              ***********";
-        component[513][1] = "***********              ***********";
-        component[514][1] = "************************************";
-        component[515][1] = "************************************";
+        component[500][1] = Big_num_con("T");
+        component[501][1] = Big_num_con("T");
+        component[502][1] = Big_num_con("V");
+        component[503][1] = Big_num_con("V");
+        component[504][1] = Big_num_con("V");
+        component[505][1] = Big_num_con("V");
+        component[506][1] = Big_num_con("V");
+        component[507][1] = Big_num_con("V");
+        component[508][1] = Big_num_con("V");
+        component[509][1] = Big_num_con("V");
+        component[510][1] = Big_num_con("V");
+        component[511][1] = Big_num_con("V");
+        component[512][1] = Big_num_con("V");
+        component[513][1] = Big_num_con("V");
+        component[514][1] = Big_num_con("T");
+        component[515][1] = Big_num_con("T");
     }
     else if (dis_p == 1)
     {
-        component[500][1] = "                         ***********";
-        component[501][1] = "                         ***********";
-        component[502][1] = "                         ***********";
-        component[503][1] = "                         ***********";
-        component[504][1] = "                         ***********";
-        component[505][1] = "                         ***********";
-        component[506][1] = "                         ***********";
-        component[507][1] = "                         ***********";
-        component[508][1] = "                         ***********";
-        component[509][1] = "                         ***********";
-        component[510][1] = "                         ***********";
-        component[511][1] = "                         ***********";
-        component[512][1] = "                         ***********";
-        component[513][1] = "                         ***********";
-        component[514][1] = "                         ***********";
-        component[515][1] = "                         ***********";
+        component[500][1] = Big_num_con("R");
+        component[501][1] = Big_num_con("R");
+        component[502][1] = Big_num_con("R");
+        component[503][1] = Big_num_con("R");
+        component[504][1] = Big_num_con("R");
+        component[505][1] = Big_num_con("R");
+        component[506][1] = Big_num_con("R");
+        component[507][1] = Big_num_con("R");
+        component[508][1] = Big_num_con("R");
+        component[509][1] = Big_num_con("R");
+        component[510][1] = Big_num_con("R");
+        component[511][1] = Big_num_con("R");
+        component[512][1] = Big_num_con("R");
+        component[513][1] = Big_num_con("R");
+        component[514][1] = Big_num_con("R");
+        component[515][1] = Big_num_con("R");
     }
     else if (dis_p == 2)
     {
-        component[500][1] = "************************************";
-        component[501][1] = "************************************";
-        component[502][1] = "************************************";
-        component[503][1] = "                         ***********";
-        component[504][1] = "                         ***********";
-        component[505][1] = "                         ***********";
-        component[506][1] = "************************************";
-        component[507][1] = "************************************";
-        component[508][1] = "************************************";
-        component[509][1] = "************************************";
-        component[510][1] = "***********                         ";
-        component[511][1] = "***********                         ";
-        component[512][1] = "***********                         ";
-        component[513][1] = "************************************";
-        component[514][1] = "************************************";
-        component[515][1] = "************************************";
+        component[500][1] = Big_num_con("T");
+        component[501][1] = Big_num_con("T");
+        component[502][1] = Big_num_con("T");
+        component[503][1] = Big_num_con("R");
+        component[504][1] = Big_num_con("R");
+        component[505][1] = Big_num_con("R");
+        component[506][1] = Big_num_con("T");
+        component[507][1] = Big_num_con("T");
+        component[508][1] = Big_num_con("T");
+        component[509][1] = Big_num_con("T");
+        component[510][1] = Big_num_con("L");
+        component[511][1] = Big_num_con("L");
+        component[512][1] = Big_num_con("L");
+        component[513][1] = Big_num_con("T");
+        component[514][1] = Big_num_con("T");
+        component[515][1] = Big_num_con("T");
     }
     else if (dis_p == 3)
     {
-        component[500][1] = "************************************";
-        component[501][1] = "************************************";
-        component[502][1] = "************************************";
-        component[503][1] = "                         ***********";
-        component[504][1] = "                         ***********";
-        component[505][1] = "                         ***********";
-        component[506][1] = "************************************";
-        component[507][1] = "************************************";
-        component[508][1] = "************************************";
-        component[509][1] = "                         ***********";
-        component[510][1] = "                         ***********";
-        component[511][1] = "                         ***********";
-        component[512][1] = "************************************";
-        component[513][1] = "************************************";
-        component[514][1] = "************************************";
-        component[515][1] = "************************************";
+        component[500][1] = Big_num_con("T");
+        component[501][1] = Big_num_con("T");
+        component[502][1] = Big_num_con("T");
+        component[503][1] = Big_num_con("R");
+        component[504][1] = Big_num_con("R");
+        component[505][1] = Big_num_con("R");
+        component[506][1] = Big_num_con("T");
+        component[507][1] = Big_num_con("T");
+        component[508][1] = Big_num_con("T");
+        component[509][1] = Big_num_con("R");
+        component[510][1] = Big_num_con("R");
+        component[511][1] = Big_num_con("R");
+        component[512][1] = Big_num_con("T");
+        component[513][1] = Big_num_con("T");
+        component[514][1] = Big_num_con("T");
+        component[515][1] = Big_num_con("T");
     }
     else if (dis_p == 4)
     {
-        component[500][1] = "***********              ***********";
-        component[501][1] = "***********              ***********";
-        component[502][1] = "***********              ***********";
-        component[503][1] = "***********              ***********";
-        component[504][1] = "***********              ***********";
-        component[505][1] = "***********              ***********";
-        component[506][1] = "************************************";
-        component[507][1] = "************************************";
-        component[508][1] = "************************************";
-        component[509][1] = "                         ***********";
-        component[510][1] = "                         ***********";
-        component[511][1] = "                         ***********";
-        component[512][1] = "                         ***********";
-        component[513][1] = "                         ***********";
-        component[514][1] = "                         ***********";
-        component[515][1] = "                         ***********";
+        component[500][1] = Big_num_con("V");
+        component[501][1] = Big_num_con("V");
+        component[502][1] = Big_num_con("V");
+        component[503][1] = Big_num_con("V");
+        component[504][1] = Big_num_con("V");
+        component[505][1] = Big_num_con("V");
+        component[506][1] = Big_num_con("T");
+        component[507][1] = Big_num_con("T");
+        component[508][1] = Big_num_con("T");
+        component[509][1] = Big_num_con("R");
+        component[510][1] = Big_num_con("R");
+        component[511][1] = Big_num_con("R");
+        component[512][1] = Big_num_con("R");
+        component[513][1] = Big_num_con("R");
+        component[514][1] = Big_num_con("R");
+        component[515][1] = Big_num_con("R");
     }
     else if (dis_p == 5)
     {
-        component[500][1] = "************************************";
-        component[501][1] = "************************************";
-        component[502][1] = "************************************";
-        component[503][1] = "***********                         ";
-        component[504][1] = "***********                         ";
-        component[505][1] = "***********                         ";
-        component[506][1] = "************************************";
-        component[507][1] = "************************************";
-        component[508][1] = "************************************";
-        component[509][1] = "                         ***********";
-        component[510][1] = "                         ***********";
-        component[511][1] = "                         ***********";
-        component[512][1] = "************************************";
-        component[513][1] = "************************************";
-        component[514][1] = "************************************";
-        component[515][1] = "************************************";
+        component[500][1] = Big_num_con("T");
+        component[501][1] = Big_num_con("T");
+        component[502][1] = Big_num_con("T");
+        component[503][1] = Big_num_con("L");
+        component[504][1] = Big_num_con("L");
+        component[505][1] = Big_num_con("L");
+        component[506][1] = Big_num_con("T");
+        component[507][1] = Big_num_con("T");
+        component[508][1] = Big_num_con("T");
+        component[509][1] = Big_num_con("R");
+        component[510][1] = Big_num_con("R");
+        component[511][1] = Big_num_con("R");
+        component[512][1] = Big_num_con("T");
+        component[513][1] = Big_num_con("T");
+        component[514][1] = Big_num_con("T");
+        component[515][1] = Big_num_con("T");
     }
     else if (dis_p == 6)
     {
-        component[500][1] = "************************************";
-        component[501][1] = "************************************";
-        component[502][1] = "************************************";
-        component[503][1] = "***********                         ";
-        component[504][1] = "***********                         ";
-        component[505][1] = "***********                         ";
-        component[506][1] = "************************************";
-        component[507][1] = "************************************";
-        component[508][1] = "************************************";
-        component[509][1] = "***********              ***********";
-        component[510][1] = "***********              ***********";
-        component[511][1] = "***********              ***********";
-        component[512][1] = "***********              ***********";
-        component[513][1] = "***********              ***********";
-        component[514][1] = "************************************";
-        component[515][1] = "************************************";
+        component[500][1] = Big_num_con("T");
+        component[501][1] = Big_num_con("T");
+        component[502][1] = Big_num_con("T");
+        component[503][1] = Big_num_con("L");
+        component[504][1] = Big_num_con("L");
+        component[505][1] = Big_num_con("L");
+        component[506][1] = Big_num_con("T");
+        component[507][1] = Big_num_con("T");
+        component[508][1] = Big_num_con("T");
+        component[509][1] = Big_num_con("V");
+        component[510][1] = Big_num_con("V");
+        component[511][1] = Big_num_con("V");
+        component[512][1] = Big_num_con("V");
+        component[513][1] = Big_num_con("V");
+        component[514][1] = Big_num_con("T");
+        component[515][1] = Big_num_con("T");
     }
     else if (dis_p == 7)
     {
-        component[500][1] = "************************************";
-        component[501][1] = "************************************";
-        component[502][1] = "************************************";
-        component[503][1] = "                         ***********";
-        component[504][1] = "                         ***********";
-        component[505][1] = "                         ***********";
-        component[506][1] = "                         ***********";
-        component[507][1] = "                         ***********";
-        component[508][1] = "                         ***********";
-        component[509][1] = "                         ***********";
-        component[510][1] = "                         ***********";
-        component[511][1] = "                         ***********";
-        component[512][1] = "                         ***********";
-        component[513][1] = "                         ***********";
-        component[514][1] = "                         ***********";
-        component[515][1] = "                         ***********";
+        component[500][1] = Big_num_con("T");
+        component[501][1] = Big_num_con("T");
+        component[502][1] = Big_num_con("T");
+        component[503][1] = Big_num_con("R");
+        component[504][1] = Big_num_con("R");
+        component[505][1] = Big_num_con("R");
+        component[506][1] = Big_num_con("R");
+        component[507][1] = Big_num_con("R");
+        component[508][1] = Big_num_con("R");
+        component[509][1] = Big_num_con("R");
+        component[510][1] = Big_num_con("R");
+        component[511][1] = Big_num_con("R");
+        component[512][1] = Big_num_con("R");
+        component[513][1] = Big_num_con("R");
+        component[514][1] = Big_num_con("R");
+        component[515][1] = Big_num_con("R");
     }
     else if (dis_p == 8)
     {
-        component[500][1] = "************************************";
-        component[501][1] = "************************************";
-        component[502][1] = "************************************";
-        component[503][1] = "***********              ***********";
-        component[504][1] = "***********              ***********";
-        component[505][1] = "***********              ***********";
-        component[506][1] = "************************************";
-        component[507][1] = "************************************";
-        component[508][1] = "************************************";
-        component[509][1] = "***********              ***********";
-        component[510][1] = "***********              ***********";
-        component[511][1] = "***********              ***********";
-        component[512][1] = "***********              ***********";
-        component[513][1] = "***********              ***********";
-        component[514][1] = "************************************";
-        component[515][1] = "************************************";
+        component[500][1] = Big_num_con("T");
+        component[501][1] = Big_num_con("T");
+        component[502][1] = Big_num_con("T");
+        component[503][1] = Big_num_con("V");
+        component[504][1] = Big_num_con("V");
+        component[505][1] = Big_num_con("V");
+        component[506][1] = Big_num_con("T");
+        component[507][1] = Big_num_con("T");
+        component[508][1] = Big_num_con("T");
+        component[509][1] = Big_num_con("V");
+        component[510][1] = Big_num_con("V");
+        component[511][1] = Big_num_con("V");
+        component[512][1] = Big_num_con("V");
+        component[513][1] = Big_num_con("V");
+        component[514][1] = Big_num_con("T");
+        component[515][1] = Big_num_con("T");
     }
     else if (dis_p == 9)
     {
-        component[500][1] = "************************************";
-        component[501][1] = "************************************";
-        component[502][1] = "************************************";
-        component[503][1] = "***********              ***********";
-        component[504][1] = "***********              ***********";
-        component[505][1] = "***********              ***********";
-        component[506][1] = "************************************";
-        component[507][1] = "************************************";
-        component[508][1] = "************************************";
-        component[509][1] = "                         ***********";
-        component[510][1] = "                         ***********";
-        component[511][1] = "                         ***********";
-        component[512][1] = "************************************";
-        component[513][1] = "************************************";
-        component[514][1] = "************************************";
-        component[515][1] = "************************************";
+        component[500][1] = Big_num_con("T");
+        component[501][1] = Big_num_con("T");
+        component[502][1] = Big_num_con("T");
+        component[503][1] = Big_num_con("V");
+        component[504][1] = Big_num_con("V");
+        component[505][1] = Big_num_con("V");
+        component[506][1] = Big_num_con("T");
+        component[507][1] = Big_num_con("T");
+        component[508][1] = Big_num_con("T");
+        component[509][1] = Big_num_con("R");
+        component[510][1] = Big_num_con("R");
+        component[511][1] = Big_num_con("R");
+        component[512][1] = Big_num_con("T");
+        component[513][1] = Big_num_con("T");
+        component[514][1] = Big_num_con("T");
+        component[515][1] = Big_num_con("T");
     }
     else
     {
-        component[500][1] = "                                    ";
-        component[501][1] = "                                    ";
-        component[502][1] = "                                    ";
-        component[503][1] = "                                    ";
-        component[504][1] = "                                    ";
-        component[505][1] = "                                    ";
-        component[506][1] = "                                    ";
-        component[507][1] = "                                    ";
-        component[508][1] = "                                    ";
-        component[509][1] = "                                    ";
-        component[510][1] = "                                    ";
-        component[511][1] = "                                    ";
-        component[512][1] = "                                    ";
-        component[513][1] = "                                    ";
-        component[514][1] = "                                    ";
-        component[515][1] = "                                    ";
+        component[500][1] = Big_num_con("O");
+        component[501][1] = Big_num_con("O");
+        component[502][1] = Big_num_con("O");
+        component[503][1] = Big_num_con("O");
+        component[504][1] = Big_num_con("O");
+        component[505][1] = Big_num_con("O");
+        component[506][1] = Big_num_con("O");
+        component[507][1] = Big_num_con("O");
+        component[508][1] = Big_num_con("O");
+        component[509][1] = Big_num_con("O");
+        component[510][1] = Big_num_con("O");
+        component[511][1] = Big_num_con("O");
+        component[512][1] = Big_num_con("O");
+        component[513][1] = Big_num_con("O");
+        component[514][1] = Big_num_con("O");
+        component[515][1] = Big_num_con("O");
     }
 }
 void Display_Price_Position_3(int dis_p)
 {
     if (dis_p == 0)
     {
-        component[500][2] = "************************************";
-        component[501][2] = "************************************";
-        component[502][2] = "***********              ***********";
-        component[503][2] = "***********              ***********";
-        component[504][2] = "***********              ***********";
-        component[505][2] = "***********              ***********";
-        component[506][2] = "***********              ***********";
-        component[507][2] = "***********              ***********";
-        component[508][2] = "***********              ***********";
-        component[509][2] = "***********              ***********";
-        component[510][2] = "***********              ***********";
-        component[511][2] = "***********              ***********";
-        component[512][2] = "***********              ***********";
-        component[513][2] = "***********              ***********";
-        component[514][2] = "************************************";
-        component[515][2] = "************************************";
+        component[500][2] = Big_num_con("T");
+        component[501][2] = Big_num_con("T");
+        component[502][2] = Big_num_con("V");
+        component[503][2] = Big_num_con("V");
+        component[504][2] = Big_num_con("V");
+        component[505][2] = Big_num_con("V");
+        component[506][2] = Big_num_con("V");
+        component[507][2] = Big_num_con("V");
+        component[508][2] = Big_num_con("V");
+        component[509][2] = Big_num_con("V");
+        component[510][2] = Big_num_con("V");
+        component[511][2] = Big_num_con("V");
+        component[512][2] = Big_num_con("V");
+        component[513][2] = Big_num_con("V");
+        component[514][2] = Big_num_con("T");
+        component[515][2] = Big_num_con("T");
     }
     else if (dis_p == 1)
     {
-        component[500][2] = "                         ***********";
-        component[501][2] = "                         ***********";
-        component[502][2] = "                         ***********";
-        component[503][2] = "                         ***********";
-        component[504][2] = "                         ***********";
-        component[505][2] = "                         ***********";
-        component[506][2] = "                         ***********";
-        component[507][2] = "                         ***********";
-        component[508][2] = "                         ***********";
-        component[509][2] = "                         ***********";
-        component[510][2] = "                         ***********";
-        component[511][2] = "                         ***********";
-        component[512][2] = "                         ***********";
-        component[513][2] = "                         ***********";
-        component[514][2] = "                         ***********";
-        component[515][2] = "                         ***********";
+        component[500][2] = Big_num_con("R");
+        component[501][2] = Big_num_con("R");
+        component[502][2] = Big_num_con("R");
+        component[503][2] = Big_num_con("R");
+        component[504][2] = Big_num_con("R");
+        component[505][2] = Big_num_con("R");
+        component[506][2] = Big_num_con("R");
+        component[507][2] = Big_num_con("R");
+        component[508][2] = Big_num_con("R");
+        component[509][2] = Big_num_con("R");
+        component[510][2] = Big_num_con("R");
+        component[511][2] = Big_num_con("R");
+        component[512][2] = Big_num_con("R");
+        component[513][2] = Big_num_con("R");
+        component[514][2] = Big_num_con("R");
+        component[515][2] = Big_num_con("R");
     }
     else if (dis_p == 2)
     {
-        component[500][2] = "************************************";
-        component[501][2] = "************************************";
-        component[502][2] = "************************************";
-        component[503][2] = "                         ***********";
-        component[504][2] = "                         ***********";
-        component[505][2] = "                         ***********";
-        component[506][2] = "************************************";
-        component[507][2] = "************************************";
-        component[508][2] = "************************************";
-        component[509][2] = "************************************";
-        component[510][2] = "***********                         ";
-        component[511][2] = "***********                         ";
-        component[512][2] = "***********                         ";
-        component[513][2] = "************************************";
-        component[514][2] = "************************************";
-        component[515][2] = "************************************";
+        component[500][2] = Big_num_con("T");
+        component[501][2] = Big_num_con("T");
+        component[502][2] = Big_num_con("T");
+        component[503][2] = Big_num_con("R");
+        component[504][2] = Big_num_con("R");
+        component[505][2] = Big_num_con("R");
+        component[506][2] = Big_num_con("T");
+        component[507][2] = Big_num_con("T");
+        component[508][2] = Big_num_con("T");
+        component[509][2] = Big_num_con("T");
+        component[510][2] = Big_num_con("L");
+        component[511][2] = Big_num_con("L");
+        component[512][2] = Big_num_con("L");
+        component[513][2] = Big_num_con("T");
+        component[514][2] = Big_num_con("T");
+        component[515][2] = Big_num_con("T");
     }
     else if (dis_p == 3)
     {
-        component[500][2] = "************************************";
-        component[501][2] = "************************************";
-        component[502][2] = "************************************";
-        component[503][2] = "                         ***********";
-        component[504][2] = "                         ***********";
-        component[505][2] = "                         ***********";
-        component[506][2] = "************************************";
-        component[507][2] = "************************************";
-        component[508][2] = "************************************";
-        component[509][2] = "                         ***********";
-        component[510][2] = "                         ***********";
-        component[511][2] = "                         ***********";
-        component[512][2] = "************************************";
-        component[513][2] = "************************************";
-        component[514][2] = "************************************";
-        component[515][2] = "************************************";
+        component[500][2] = Big_num_con("T");
+        component[501][2] = Big_num_con("T");
+        component[502][2] = Big_num_con("T");
+        component[503][2] = Big_num_con("R");
+        component[504][2] = Big_num_con("R");
+        component[505][2] = Big_num_con("R");
+        component[506][2] = Big_num_con("T");
+        component[507][2] = Big_num_con("T");
+        component[508][2] = Big_num_con("T");
+        component[509][2] = Big_num_con("R");
+        component[510][2] = Big_num_con("R");
+        component[511][2] = Big_num_con("R");
+        component[512][2] = Big_num_con("T");
+        component[513][2] = Big_num_con("T");
+        component[514][2] = Big_num_con("T");
+        component[515][2] = Big_num_con("T");
     }
     else if (dis_p == 4)
     {
-        component[500][2] = "***********              ***********";
-        component[501][2] = "***********              ***********";
-        component[502][2] = "***********              ***********";
-        component[503][2] = "***********              ***********";
-        component[504][2] = "***********              ***********";
-        component[505][2] = "***********              ***********";
-        component[506][2] = "************************************";
-        component[507][2] = "************************************";
-        component[508][2] = "************************************";
-        component[509][2] = "                         ***********";
-        component[510][2] = "                         ***********";
-        component[511][2] = "                         ***********";
-        component[512][2] = "                         ***********";
-        component[513][2] = "                         ***********";
-        component[514][2] = "                         ***********";
-        component[515][2] = "                         ***********";
+        component[500][2] = Big_num_con("V");
+        component[501][2] = Big_num_con("V");
+        component[502][2] = Big_num_con("V");
+        component[503][2] = Big_num_con("V");
+        component[504][2] = Big_num_con("V");
+        component[505][2] = Big_num_con("V");
+        component[506][2] = Big_num_con("T");
+        component[507][2] = Big_num_con("T");
+        component[508][2] = Big_num_con("T");
+        component[509][2] = Big_num_con("R");
+        component[510][2] = Big_num_con("R");
+        component[511][2] = Big_num_con("R");
+        component[512][2] = Big_num_con("R");
+        component[513][2] = Big_num_con("R");
+        component[514][2] = Big_num_con("R");
+        component[515][2] = Big_num_con("R");
     }
     else if (dis_p == 5)
     {
-        component[500][2] = "************************************";
-        component[501][2] = "************************************";
-        component[502][2] = "************************************";
-        component[503][2] = "***********                         ";
-        component[504][2] = "***********                         ";
-        component[505][2] = "***********                         ";
-        component[506][2] = "************************************";
-        component[507][2] = "************************************";
-        component[508][2] = "************************************";
-        component[509][2] = "                         ***********";
-        component[510][2] = "                         ***********";
-        component[511][2] = "                         ***********";
-        component[512][2] = "************************************";
-        component[513][2] = "************************************";
-        component[514][2] = "************************************";
-        component[515][2] = "************************************";
+        component[500][2] = Big_num_con("T");
+        component[501][2] = Big_num_con("T");
+        component[502][2] = Big_num_con("T");
+        component[503][2] = Big_num_con("L");
+        component[504][2] = Big_num_con("L");
+        component[505][2] = Big_num_con("L");
+        component[506][2] = Big_num_con("T");
+        component[507][2] = Big_num_con("T");
+        component[508][2] = Big_num_con("T");
+        component[509][2] = Big_num_con("R");
+        component[510][2] = Big_num_con("R");
+        component[511][2] = Big_num_con("R");
+        component[512][2] = Big_num_con("T");
+        component[513][2] = Big_num_con("T");
+        component[514][2] = Big_num_con("T");
+        component[515][2] = Big_num_con("T");
     }
     else if (dis_p == 6)
     {
-        component[500][2] = "************************************";
-        component[501][2] = "************************************";
-        component[502][2] = "************************************";
-        component[503][2] = "***********                         ";
-        component[504][2] = "***********                         ";
-        component[505][2] = "***********                         ";
-        component[506][2] = "************************************";
-        component[507][2] = "************************************";
-        component[508][2] = "************************************";
-        component[509][2] = "***********              ***********";
-        component[510][2] = "***********              ***********";
-        component[511][2] = "***********              ***********";
-        component[512][2] = "***********              ***********";
-        component[513][2] = "***********              ***********";
-        component[514][2] = "************************************";
-        component[515][2] = "************************************";
+        component[500][2] = Big_num_con("T");
+        component[501][2] = Big_num_con("T");
+        component[502][2] = Big_num_con("T");
+        component[503][2] = Big_num_con("L");
+        component[504][2] = Big_num_con("L");
+        component[505][2] = Big_num_con("L");
+        component[506][2] = Big_num_con("T");
+        component[507][2] = Big_num_con("T");
+        component[508][2] = Big_num_con("T");
+        component[509][2] = Big_num_con("V");
+        component[510][2] = Big_num_con("V");
+        component[511][2] = Big_num_con("V");
+        component[512][2] = Big_num_con("V");
+        component[513][2] = Big_num_con("V");
+        component[514][2] = Big_num_con("T");
+        component[515][2] = Big_num_con("T");
     }
     else if (dis_p == 7)
     {
-        component[500][2] = "************************************";
-        component[501][2] = "************************************";
-        component[502][2] = "************************************";
-        component[503][2] = "                         ***********";
-        component[504][2] = "                         ***********";
-        component[505][2] = "                         ***********";
-        component[506][2] = "                         ***********";
-        component[507][2] = "                         ***********";
-        component[508][2] = "                         ***********";
-        component[509][2] = "                         ***********";
-        component[510][2] = "                         ***********";
-        component[511][2] = "                         ***********";
-        component[512][2] = "                         ***********";
-        component[513][2] = "                         ***********";
-        component[514][2] = "                         ***********";
-        component[515][2] = "                         ***********";
+        component[500][2] = Big_num_con("T");
+        component[501][2] = Big_num_con("T");
+        component[502][2] = Big_num_con("T");
+        component[503][2] = Big_num_con("R");
+        component[504][2] = Big_num_con("R");
+        component[505][2] = Big_num_con("R");
+        component[506][2] = Big_num_con("R");
+        component[507][2] = Big_num_con("R");
+        component[508][2] = Big_num_con("R");
+        component[509][2] = Big_num_con("R");
+        component[510][2] = Big_num_con("R");
+        component[511][2] = Big_num_con("R");
+        component[512][2] = Big_num_con("R");
+        component[513][2] = Big_num_con("R");
+        component[514][2] = Big_num_con("R");
+        component[515][2] = Big_num_con("R");
     }
     else if (dis_p == 8)
     {
-        component[500][2] = "************************************";
-        component[501][2] = "************************************";
-        component[502][2] = "************************************";
-        component[503][2] = "***********              ***********";
-        component[504][2] = "***********              ***********";
-        component[505][2] = "***********              ***********";
-        component[506][2] = "************************************";
-        component[507][2] = "************************************";
-        component[508][2] = "************************************";
-        component[509][2] = "***********              ***********";
-        component[510][2] = "***********              ***********";
-        component[511][2] = "***********              ***********";
-        component[512][2] = "***********              ***********";
-        component[513][2] = "***********              ***********";
-        component[514][2] = "************************************";
-        component[515][2] = "************************************";
+        component[500][2] = Big_num_con("T");
+        component[501][2] = Big_num_con("T");
+        component[502][2] = Big_num_con("T");
+        component[503][2] = Big_num_con("V");
+        component[504][2] = Big_num_con("V");
+        component[505][2] = Big_num_con("V");
+        component[506][2] = Big_num_con("T");
+        component[507][2] = Big_num_con("T");
+        component[508][2] = Big_num_con("T");
+        component[509][2] = Big_num_con("V");
+        component[510][2] = Big_num_con("V");
+        component[511][2] = Big_num_con("V");
+        component[512][2] = Big_num_con("V");
+        component[513][2] = Big_num_con("V");
+        component[514][2] = Big_num_con("T");
+        component[515][2] = Big_num_con("T");
     }
     else if (dis_p == 9)
     {
-        component[500][2] = "************************************";
-        component[501][2] = "************************************";
-        component[502][2] = "************************************";
-        component[503][2] = "***********              ***********";
-        component[504][2] = "***********              ***********";
-        component[505][2] = "***********              ***********";
-        component[506][2] = "************************************";
-        component[507][2] = "************************************";
-        component[508][2] = "************************************";
-        component[509][2] = "                         ***********";
-        component[510][2] = "                         ***********";
-        component[511][2] = "                         ***********";
-        component[512][2] = "************************************";
-        component[513][2] = "************************************";
-        component[514][2] = "************************************";
-        component[515][2] = "************************************";
+        component[500][2] = Big_num_con("T");
+        component[501][2] = Big_num_con("T");
+        component[502][2] = Big_num_con("T");
+        component[503][2] = Big_num_con("V");
+        component[504][2] = Big_num_con("V");
+        component[505][2] = Big_num_con("V");
+        component[506][2] = Big_num_con("T");
+        component[507][2] = Big_num_con("T");
+        component[508][2] = Big_num_con("T");
+        component[509][2] = Big_num_con("R");
+        component[510][2] = Big_num_con("R");
+        component[511][2] = Big_num_con("R");
+        component[512][2] = Big_num_con("T");
+        component[513][2] = Big_num_con("T");
+        component[514][2] = Big_num_con("T");
+        component[515][2] = Big_num_con("T");
     }
     else
     {
-        component[500][2] = "                                    ";
-        component[501][2] = "                                    ";
-        component[502][2] = "                                    ";
-        component[503][2] = "                                    ";
-        component[504][2] = "                                    ";
-        component[505][2] = "                                    ";
-        component[506][2] = "                                    ";
-        component[507][2] = "                                    ";
-        component[508][2] = "                                    ";
-        component[509][2] = "                                    ";
-        component[510][2] = "                                    ";
-        component[511][2] = "                                    ";
-        component[512][2] = "                                    ";
-        component[513][2] = "                                    ";
-        component[514][2] = "                                    ";
-        component[515][2] = "                                    ";
+        component[500][2] = Big_num_con("O");
+        component[501][2] = Big_num_con("O");
+        component[502][2] = Big_num_con("O");
+        component[503][2] = Big_num_con("O");
+        component[504][2] = Big_num_con("O");
+        component[505][2] = Big_num_con("O");
+        component[506][2] = Big_num_con("O");
+        component[507][2] = Big_num_con("O");
+        component[508][2] = Big_num_con("O");
+        component[509][2] = Big_num_con("O");
+        component[510][2] = Big_num_con("O");
+        component[511][2] = Big_num_con("O");
+        component[512][2] = Big_num_con("O");
+        component[513][2] = Big_num_con("O");
+        component[514][2] = Big_num_con("O");
+        component[515][2] = Big_num_con("O");
     }
 }
 void Display_Price_Position_4(int dis_p)
 {
     if (dis_p == 0)
     {
-        component[500][3] = "************************************";
-        component[501][3] = "************************************";
-        component[502][3] = "***********              ***********";
-        component[503][3] = "***********              ***********";
-        component[504][3] = "***********              ***********";
-        component[505][3] = "***********              ***********";
-        component[506][3] = "***********              ***********";
-        component[507][3] = "***********              ***********";
-        component[508][3] = "***********              ***********";
-        component[509][3] = "***********              ***********";
-        component[510][3] = "***********              ***********";
-        component[511][3] = "***********              ***********";
-        component[512][3] = "***********              ***********";
-        component[513][3] = "***********              ***********";
-        component[514][3] = "************************************";
-        component[515][3] = "************************************";
+        component[500][3] = Big_num_con("T");
+        component[501][3] = Big_num_con("T");
+        component[502][3] = Big_num_con("V");
+        component[503][3] = Big_num_con("V");
+        component[504][3] = Big_num_con("V");
+        component[505][3] = Big_num_con("V");
+        component[506][3] = Big_num_con("V");
+        component[507][3] = Big_num_con("V");
+        component[508][3] = Big_num_con("V");
+        component[509][3] = Big_num_con("V");
+        component[510][3] = Big_num_con("V");
+        component[511][3] = Big_num_con("V");
+        component[512][3] = Big_num_con("V");
+        component[513][3] = Big_num_con("V");
+        component[514][3] = Big_num_con("T");
+        component[515][3] = Big_num_con("T");
     }
     else if (dis_p == 1)
     {
-        component[500][3] = "                         ***********";
-        component[501][3] = "                         ***********";
-        component[502][3] = "                         ***********";
-        component[503][3] = "                         ***********";
-        component[504][3] = "                         ***********";
-        component[505][3] = "                         ***********";
-        component[506][3] = "                         ***********";
-        component[507][3] = "                         ***********";
-        component[508][3] = "                         ***********";
-        component[509][3] = "                         ***********";
-        component[510][3] = "                         ***********";
-        component[511][3] = "                         ***********";
-        component[512][3] = "                         ***********";
-        component[513][3] = "                         ***********";
-        component[514][3] = "                         ***********";
-        component[515][3] = "                         ***********";
+        component[500][3] = Big_num_con("R");
+        component[501][3] = Big_num_con("R");
+        component[502][3] = Big_num_con("R");
+        component[503][3] = Big_num_con("R");
+        component[504][3] = Big_num_con("R");
+        component[505][3] = Big_num_con("R");
+        component[506][3] = Big_num_con("R");
+        component[507][3] = Big_num_con("R");
+        component[508][3] = Big_num_con("R");
+        component[509][3] = Big_num_con("R");
+        component[510][3] = Big_num_con("R");
+        component[511][3] = Big_num_con("R");
+        component[512][3] = Big_num_con("R");
+        component[513][3] = Big_num_con("R");
+        component[514][3] = Big_num_con("R");
+        component[515][3] = Big_num_con("R");
     }
     else if (dis_p == 2)
     {
-        component[500][3] = "************************************";
-        component[501][3] = "************************************";
-        component[502][3] = "************************************";
-        component[503][3] = "                         ***********";
-        component[504][3] = "                         ***********";
-        component[505][3] = "                         ***********";
-        component[506][3] = "************************************";
-        component[507][3] = "************************************";
-        component[508][3] = "************************************";
-        component[509][3] = "************************************";
-        component[510][3] = "***********                         ";
-        component[511][3] = "***********                         ";
-        component[512][3] = "***********                         ";
-        component[513][3] = "************************************";
-        component[514][3] = "************************************";
-        component[515][3] = "************************************";
+        component[500][3] = Big_num_con("T");
+        component[501][3] = Big_num_con("T");
+        component[502][3] = Big_num_con("T");
+        component[503][3] = Big_num_con("R");
+        component[504][3] = Big_num_con("R");
+        component[505][3] = Big_num_con("R");
+        component[506][3] = Big_num_con("T");
+        component[507][3] = Big_num_con("T");
+        component[508][3] = Big_num_con("T");
+        component[509][3] = Big_num_con("T");
+        component[510][3] = Big_num_con("L");
+        component[511][3] = Big_num_con("L");
+        component[512][3] = Big_num_con("L");
+        component[513][3] = Big_num_con("T");
+        component[514][3] = Big_num_con("T");
+        component[515][3] = Big_num_con("T");
     }
     else if (dis_p == 3)
     {
-        component[500][3] = "************************************";
-        component[501][3] = "************************************";
-        component[502][3] = "************************************";
-        component[503][3] = "                         ***********";
-        component[504][3] = "                         ***********";
-        component[505][3] = "                         ***********";
-        component[506][3] = "************************************";
-        component[507][3] = "************************************";
-        component[508][3] = "************************************";
-        component[509][3] = "                         ***********";
-        component[510][3] = "                         ***********";
-        component[511][3] = "                         ***********";
-        component[512][3] = "************************************";
-        component[513][3] = "************************************";
-        component[514][3] = "************************************";
-        component[515][3] = "************************************";
+        component[500][3] = Big_num_con("T");
+        component[501][3] = Big_num_con("T");
+        component[502][3] = Big_num_con("T");
+        component[503][3] = Big_num_con("R");
+        component[504][3] = Big_num_con("R");
+        component[505][3] = Big_num_con("R");
+        component[506][3] = Big_num_con("T");
+        component[507][3] = Big_num_con("T");
+        component[508][3] = Big_num_con("T");
+        component[509][3] = Big_num_con("R");
+        component[510][3] = Big_num_con("R");
+        component[511][3] = Big_num_con("R");
+        component[512][3] = Big_num_con("T");
+        component[513][3] = Big_num_con("T");
+        component[514][3] = Big_num_con("T");
+        component[515][3] = Big_num_con("T");
     }
     else if (dis_p == 4)
     {
-        component[500][3] = "***********              ***********";
-        component[501][3] = "***********              ***********";
-        component[502][3] = "***********              ***********";
-        component[503][3] = "***********              ***********";
-        component[504][3] = "***********              ***********";
-        component[505][3] = "***********              ***********";
-        component[506][3] = "************************************";
-        component[507][3] = "************************************";
-        component[508][3] = "************************************";
-        component[509][3] = "                         ***********";
-        component[510][3] = "                         ***********";
-        component[511][3] = "                         ***********";
-        component[512][3] = "                         ***********";
-        component[513][3] = "                         ***********";
-        component[514][3] = "                         ***********";
-        component[515][3] = "                         ***********";
+        component[500][3] = Big_num_con("V");
+        component[501][3] = Big_num_con("V");
+        component[502][3] = Big_num_con("V");
+        component[503][3] = Big_num_con("V");
+        component[504][3] = Big_num_con("V");
+        component[505][3] = Big_num_con("V");
+        component[506][3] = Big_num_con("T");
+        component[507][3] = Big_num_con("T");
+        component[508][3] = Big_num_con("T");
+        component[509][3] = Big_num_con("R");
+        component[510][3] = Big_num_con("R");
+        component[511][3] = Big_num_con("R");
+        component[512][3] = Big_num_con("R");
+        component[513][3] = Big_num_con("R");
+        component[514][3] = Big_num_con("R");
+        component[515][3] = Big_num_con("R");
     }
     else if (dis_p == 5)
     {
-        component[500][3] = "************************************";
-        component[501][3] = "************************************";
-        component[502][3] = "************************************";
-        component[503][3] = "***********                         ";
-        component[504][3] = "***********                         ";
-        component[505][3] = "***********                         ";
-        component[506][3] = "************************************";
-        component[507][3] = "************************************";
-        component[508][3] = "************************************";
-        component[509][3] = "                         ***********";
-        component[510][3] = "                         ***********";
-        component[511][3] = "                         ***********";
-        component[512][3] = "************************************";
-        component[513][3] = "************************************";
-        component[514][3] = "************************************";
-        component[515][3] = "************************************";
+        component[500][3] = Big_num_con("T");
+        component[501][3] = Big_num_con("T");
+        component[502][3] = Big_num_con("T");
+        component[503][3] = Big_num_con("L");
+        component[504][3] = Big_num_con("L");
+        component[505][3] = Big_num_con("L");
+        component[506][3] = Big_num_con("T");
+        component[507][3] = Big_num_con("T");
+        component[508][3] = Big_num_con("T");
+        component[509][3] = Big_num_con("R");
+        component[510][3] = Big_num_con("R");
+        component[511][3] = Big_num_con("R");
+        component[512][3] = Big_num_con("T");
+        component[513][3] = Big_num_con("T");
+        component[514][3] = Big_num_con("T");
+        component[515][3] = Big_num_con("T");
     }
     else if (dis_p == 6)
     {
-        component[500][3] = "************************************";
-        component[501][3] = "************************************";
-        component[502][3] = "************************************";
-        component[503][3] = "***********                         ";
-        component[504][3] = "***********                         ";
-        component[505][3] = "***********                         ";
-        component[506][3] = "************************************";
-        component[507][3] = "************************************";
-        component[508][3] = "************************************";
-        component[509][3] = "***********              ***********";
-        component[510][3] = "***********              ***********";
-        component[511][3] = "***********              ***********";
-        component[512][3] = "***********              ***********";
-        component[513][3] = "***********              ***********";
-        component[514][3] = "************************************";
-        component[515][3] = "************************************";
+        component[500][3] = Big_num_con("T");
+        component[501][3] = Big_num_con("T");
+        component[502][3] = Big_num_con("T");
+        component[503][3] = Big_num_con("L");
+        component[504][3] = Big_num_con("L");
+        component[505][3] = Big_num_con("L");
+        component[506][3] = Big_num_con("T");
+        component[507][3] = Big_num_con("T");
+        component[508][3] = Big_num_con("T");
+        component[509][3] = Big_num_con("V");
+        component[510][3] = Big_num_con("V");
+        component[511][3] = Big_num_con("V");
+        component[512][3] = Big_num_con("V");
+        component[513][3] = Big_num_con("V");
+        component[514][3] = Big_num_con("T");
+        component[515][3] = Big_num_con("T");
     }
     else if (dis_p == 7)
     {
-        component[500][3] = "************************************";
-        component[501][3] = "************************************";
-        component[502][3] = "************************************";
-        component[503][3] = "                         ***********";
-        component[504][3] = "                         ***********";
-        component[505][3] = "                         ***********";
-        component[506][3] = "                         ***********";
-        component[507][3] = "                         ***********";
-        component[508][3] = "                         ***********";
-        component[509][3] = "                         ***********";
-        component[510][3] = "                         ***********";
-        component[511][3] = "                         ***********";
-        component[512][3] = "                         ***********";
-        component[513][3] = "                         ***********";
-        component[514][3] = "                         ***********";
-        component[515][3] = "                         ***********";
+        component[500][3] = Big_num_con("T");
+        component[501][3] = Big_num_con("T");
+        component[502][3] = Big_num_con("T");
+        component[503][3] = Big_num_con("R");
+        component[504][3] = Big_num_con("R");
+        component[505][3] = Big_num_con("R");
+        component[506][3] = Big_num_con("R");
+        component[507][3] = Big_num_con("R");
+        component[508][3] = Big_num_con("R");
+        component[509][3] = Big_num_con("R");
+        component[510][3] = Big_num_con("R");
+        component[511][3] = Big_num_con("R");
+        component[512][3] = Big_num_con("R");
+        component[513][3] = Big_num_con("R");
+        component[514][3] = Big_num_con("R");
+        component[515][3] = Big_num_con("R");
     }
     else if (dis_p == 8)
     {
-        component[500][3] = "************************************";
-        component[501][3] = "************************************";
-        component[502][3] = "************************************";
-        component[503][3] = "***********              ***********";
-        component[504][3] = "***********              ***********";
-        component[505][3] = "***********              ***********";
-        component[506][3] = "************************************";
-        component[507][3] = "************************************";
-        component[508][3] = "************************************";
-        component[509][3] = "***********              ***********";
-        component[510][3] = "***********              ***********";
-        component[511][3] = "***********              ***********";
-        component[512][3] = "***********              ***********";
-        component[513][3] = "***********              ***********";
-        component[514][3] = "************************************";
-        component[515][3] = "************************************";
+        component[500][3] = Big_num_con("T");
+        component[501][3] = Big_num_con("T");
+        component[502][3] = Big_num_con("T");
+        component[503][3] = Big_num_con("V");
+        component[504][3] = Big_num_con("V");
+        component[505][3] = Big_num_con("V");
+        component[506][3] = Big_num_con("T");
+        component[507][3] = Big_num_con("T");
+        component[508][3] = Big_num_con("T");
+        component[509][3] = Big_num_con("V");
+        component[510][3] = Big_num_con("V");
+        component[511][3] = Big_num_con("V");
+        component[512][3] = Big_num_con("V");
+        component[513][3] = Big_num_con("V");
+        component[514][3] = Big_num_con("T");
+        component[515][3] = Big_num_con("T");
     }
     else if (dis_p == 9)
     {
-        component[500][3] = "************************************";
-        component[501][3] = "************************************";
-        component[502][3] = "************************************";
-        component[503][3] = "***********              ***********";
-        component[504][3] = "***********              ***********";
-        component[505][3] = "***********              ***********";
-        component[506][3] = "************************************";
-        component[507][3] = "************************************";
-        component[508][3] = "************************************";
-        component[509][3] = "                         ***********";
-        component[510][3] = "                         ***********";
-        component[511][3] = "                         ***********";
-        component[512][3] = "************************************";
-        component[513][3] = "************************************";
-        component[514][3] = "************************************";
-        component[515][3] = "************************************";
+        component[500][3] = Big_num_con("T");
+        component[501][3] = Big_num_con("T");
+        component[502][3] = Big_num_con("T");
+        component[503][3] = Big_num_con("V");
+        component[504][3] = Big_num_con("V");
+        component[505][3] = Big_num_con("V");
+        component[506][3] = Big_num_con("T");
+        component[507][3] = Big_num_con("T");
+        component[508][3] = Big_num_con("T");
+        component[509][3] = Big_num_con("R");
+        component[510][3] = Big_num_con("R");
+        component[511][3] = Big_num_con("R");
+        component[512][3] = Big_num_con("T");
+        component[513][3] = Big_num_con("T");
+        component[514][3] = Big_num_con("T");
+        component[515][3] = Big_num_con("T");
     }
     else
     {
-        component[500][3] = "                                    ";
-        component[501][3] = "                                    ";
-        component[502][3] = "                                    ";
-        component[503][3] = "                                    ";
-        component[504][3] = "                                    ";
-        component[505][3] = "                                    ";
-        component[506][3] = "                                    ";
-        component[507][3] = "                                    ";
-        component[508][3] = "                                    ";
-        component[509][3] = "                                    ";
-        component[510][3] = "                                    ";
-        component[511][3] = "                                    ";
-        component[512][3] = "                                    ";
-        component[513][3] = "                                    ";
-        component[514][3] = "                                    ";
-        component[515][3] = "                                    ";
+        component[500][3] = Big_num_con("O");
+        component[501][3] = Big_num_con("O");
+        component[502][3] = Big_num_con("O");
+        component[503][3] = Big_num_con("O");
+        component[504][3] = Big_num_con("O");
+        component[505][3] = Big_num_con("O");
+        component[506][3] = Big_num_con("O");
+        component[507][3] = Big_num_con("O");
+        component[508][3] = Big_num_con("O");
+        component[509][3] = Big_num_con("O");
+        component[510][3] = Big_num_con("O");
+        component[511][3] = Big_num_con("O");
+        component[512][3] = Big_num_con("O");
+        component[513][3] = Big_num_con("O");
+        component[514][3] = Big_num_con("O");
+        component[515][3] = Big_num_con("O");
     }
 }
 void Display_Price_Position_5(int dis_p)
 {
     if (dis_p == 0)
     {
-        component[500][4] = "************************************";
-        component[501][4] = "************************************";
-        component[502][4] = "***********              ***********";
-        component[503][4] = "***********              ***********";
-        component[504][4] = "***********              ***********";
-        component[505][4] = "***********              ***********";
-        component[506][4] = "***********              ***********";
-        component[507][4] = "***********              ***********";
-        component[508][4] = "***********              ***********";
-        component[509][4] = "***********              ***********";
-        component[510][4] = "***********              ***********";
-        component[511][4] = "***********              ***********";
-        component[512][4] = "***********              ***********";
-        component[513][4] = "***********              ***********";
-        component[514][4] = "************************************";
-        component[515][4] = "************************************";
+        component[500][4] = Big_num_con("T");
+        component[501][4] = Big_num_con("T");
+        component[502][4] = Big_num_con("V");
+        component[503][4] = Big_num_con("V");
+        component[504][4] = Big_num_con("V");
+        component[505][4] = Big_num_con("V");
+        component[506][4] = Big_num_con("V");
+        component[507][4] = Big_num_con("V");
+        component[508][4] = Big_num_con("V");
+        component[509][4] = Big_num_con("V");
+        component[510][4] = Big_num_con("V");
+        component[511][4] = Big_num_con("V");
+        component[512][4] = Big_num_con("V");
+        component[513][4] = Big_num_con("V");
+        component[514][4] = Big_num_con("T");
+        component[515][4] = Big_num_con("T");
     }
     else if (dis_p == 1)
     {
-        component[500][4] = "                         ***********";
-        component[501][4] = "                         ***********";
-        component[502][4] = "                         ***********";
-        component[503][4] = "                         ***********";
-        component[504][4] = "                         ***********";
-        component[505][4] = "                         ***********";
-        component[506][4] = "                         ***********";
-        component[507][4] = "                         ***********";
-        component[508][4] = "                         ***********";
-        component[509][4] = "                         ***********";
-        component[510][4] = "                         ***********";
-        component[511][4] = "                         ***********";
-        component[512][4] = "                         ***********";
-        component[513][4] = "                         ***********";
-        component[514][4] = "                         ***********";
-        component[515][4] = "                         ***********";
+        component[500][4] = Big_num_con("R");
+        component[501][4] = Big_num_con("R");
+        component[502][4] = Big_num_con("R");
+        component[503][4] = Big_num_con("R");
+        component[504][4] = Big_num_con("R");
+        component[505][4] = Big_num_con("R");
+        component[506][4] = Big_num_con("R");
+        component[507][4] = Big_num_con("R");
+        component[508][4] = Big_num_con("R");
+        component[509][4] = Big_num_con("R");
+        component[510][4] = Big_num_con("R");
+        component[511][4] = Big_num_con("R");
+        component[512][4] = Big_num_con("R");
+        component[513][4] = Big_num_con("R");
+        component[514][4] = Big_num_con("R");
+        component[515][4] = Big_num_con("R");
     }
     else if (dis_p == 2)
     {
-        component[500][4] = "************************************";
-        component[501][4] = "************************************";
-        component[502][4] = "************************************";
-        component[503][4] = "                         ***********";
-        component[504][4] = "                         ***********";
-        component[505][4] = "                         ***********";
-        component[506][4] = "************************************";
-        component[507][4] = "************************************";
-        component[508][4] = "************************************";
-        component[509][4] = "************************************";
-        component[510][4] = "***********                         ";
-        component[511][4] = "***********                         ";
-        component[512][4] = "***********                         ";
-        component[513][4] = "************************************";
-        component[514][4] = "************************************";
-        component[515][4] = "************************************";
+        component[500][4] = Big_num_con("T");
+        component[501][4] = Big_num_con("T");
+        component[502][4] = Big_num_con("T");
+        component[503][4] = Big_num_con("R");
+        component[504][4] = Big_num_con("R");
+        component[505][4] = Big_num_con("R");
+        component[506][4] = Big_num_con("T");
+        component[507][4] = Big_num_con("T");
+        component[508][4] = Big_num_con("T");
+        component[509][4] = Big_num_con("T");
+        component[510][4] = Big_num_con("L");
+        component[511][4] = Big_num_con("L");
+        component[512][4] = Big_num_con("L");
+        component[513][4] = Big_num_con("T");
+        component[514][4] = Big_num_con("T");
+        component[515][4] = Big_num_con("T");
     }
     else if (dis_p == 3)
     {
-        component[500][4] = "************************************";
-        component[501][4] = "************************************";
-        component[502][4] = "************************************";
-        component[503][4] = "                         ***********";
-        component[504][4] = "                         ***********";
-        component[505][4] = "                         ***********";
-        component[506][4] = "************************************";
-        component[507][4] = "************************************";
-        component[508][4] = "************************************";
-        component[509][4] = "                         ***********";
-        component[510][4] = "                         ***********";
-        component[511][4] = "                         ***********";
-        component[512][4] = "************************************";
-        component[513][4] = "************************************";
-        component[514][4] = "************************************";
-        component[515][4] = "************************************";
+        component[500][4] = Big_num_con("T");
+        component[501][4] = Big_num_con("T");
+        component[502][4] = Big_num_con("T");
+        component[503][4] = Big_num_con("R");
+        component[504][4] = Big_num_con("R");
+        component[505][4] = Big_num_con("R");
+        component[506][4] = Big_num_con("T");
+        component[507][4] = Big_num_con("T");
+        component[508][4] = Big_num_con("T");
+        component[509][4] = Big_num_con("R");
+        component[510][4] = Big_num_con("R");
+        component[511][4] = Big_num_con("R");
+        component[512][4] = Big_num_con("T");
+        component[513][4] = Big_num_con("T");
+        component[514][4] = Big_num_con("T");
+        component[515][4] = Big_num_con("T");
     }
     else if (dis_p == 4)
     {
-        component[500][4] = "***********              ***********";
-        component[501][4] = "***********              ***********";
-        component[502][4] = "***********              ***********";
-        component[503][4] = "***********              ***********";
-        component[504][4] = "***********              ***********";
-        component[505][4] = "***********              ***********";
-        component[506][4] = "************************************";
-        component[507][4] = "************************************";
-        component[508][4] = "************************************";
-        component[509][4] = "                         ***********";
-        component[510][4] = "                         ***********";
-        component[511][4] = "                         ***********";
-        component[512][4] = "                         ***********";
-        component[513][4] = "                         ***********";
-        component[514][4] = "                         ***********";
-        component[515][4] = "                         ***********";
+        component[500][4] = Big_num_con("V");
+        component[501][4] = Big_num_con("V");
+        component[502][4] = Big_num_con("V");
+        component[503][4] = Big_num_con("V");
+        component[504][4] = Big_num_con("V");
+        component[505][4] = Big_num_con("V");
+        component[506][4] = Big_num_con("T");
+        component[507][4] = Big_num_con("T");
+        component[508][4] = Big_num_con("T");
+        component[509][4] = Big_num_con("R");
+        component[510][4] = Big_num_con("R");
+        component[511][4] = Big_num_con("R");
+        component[512][4] = Big_num_con("R");
+        component[513][4] = Big_num_con("R");
+        component[514][4] = Big_num_con("R");
+        component[515][4] = Big_num_con("R");
     }
     else if (dis_p == 5)
     {
-        component[500][4] = "************************************";
-        component[501][4] = "************************************";
-        component[502][4] = "************************************";
-        component[503][4] = "***********                         ";
-        component[504][4] = "***********                         ";
-        component[505][4] = "***********                         ";
-        component[506][4] = "************************************";
-        component[507][4] = "************************************";
-        component[508][4] = "************************************";
-        component[509][4] = "                         ***********";
-        component[510][4] = "                         ***********";
-        component[511][4] = "                         ***********";
-        component[512][4] = "************************************";
-        component[513][4] = "************************************";
-        component[514][4] = "************************************";
-        component[515][4] = "************************************";
+        component[500][4] = Big_num_con("T");
+        component[501][4] = Big_num_con("T");
+        component[502][4] = Big_num_con("T");
+        component[503][4] = Big_num_con("L");
+        component[504][4] = Big_num_con("L");
+        component[505][4] = Big_num_con("L");
+        component[506][4] = Big_num_con("T");
+        component[507][4] = Big_num_con("T");
+        component[508][4] = Big_num_con("T");
+        component[509][4] = Big_num_con("R");
+        component[510][4] = Big_num_con("R");
+        component[511][4] = Big_num_con("R");
+        component[512][4] = Big_num_con("T");
+        component[513][4] = Big_num_con("T");
+        component[514][4] = Big_num_con("T");
+        component[515][4] = Big_num_con("T");
     }
     else if (dis_p == 6)
     {
-        component[500][4] = "************************************";
-        component[501][4] = "************************************";
-        component[502][4] = "************************************";
-        component[503][4] = "***********                         ";
-        component[504][4] = "***********                         ";
-        component[505][4] = "***********                         ";
-        component[506][4] = "************************************";
-        component[507][4] = "************************************";
-        component[508][4] = "************************************";
-        component[509][4] = "***********              ***********";
-        component[510][4] = "***********              ***********";
-        component[511][4] = "***********              ***********";
-        component[512][4] = "***********              ***********";
-        component[513][4] = "***********              ***********";
-        component[514][4] = "************************************";
-        component[515][4] = "************************************";
+        component[500][4] = Big_num_con("T");
+        component[501][4] = Big_num_con("T");
+        component[502][4] = Big_num_con("T");
+        component[503][4] = Big_num_con("L");
+        component[504][4] = Big_num_con("L");
+        component[505][4] = Big_num_con("L");
+        component[506][4] = Big_num_con("T");
+        component[507][4] = Big_num_con("T");
+        component[508][4] = Big_num_con("T");
+        component[509][4] = Big_num_con("V");
+        component[510][4] = Big_num_con("V");
+        component[511][4] = Big_num_con("V");
+        component[512][4] = Big_num_con("V");
+        component[513][4] = Big_num_con("V");
+        component[514][4] = Big_num_con("T");
+        component[515][4] = Big_num_con("T");
     }
     else if (dis_p == 7)
     {
-        component[500][4] = "************************************";
-        component[501][4] = "************************************";
-        component[502][4] = "************************************";
-        component[503][4] = "                         ***********";
-        component[504][4] = "                         ***********";
-        component[505][4] = "                         ***********";
-        component[506][4] = "                         ***********";
-        component[507][4] = "                         ***********";
-        component[508][4] = "                         ***********";
-        component[509][4] = "                         ***********";
-        component[510][4] = "                         ***********";
-        component[511][4] = "                         ***********";
-        component[512][4] = "                         ***********";
-        component[513][4] = "                         ***********";
-        component[514][4] = "                         ***********";
-        component[515][4] = "                         ***********";
+        component[500][4] = Big_num_con("T");
+        component[501][4] = Big_num_con("T");
+        component[502][4] = Big_num_con("T");
+        component[503][4] = Big_num_con("R");
+        component[504][4] = Big_num_con("R");
+        component[505][4] = Big_num_con("R");
+        component[506][4] = Big_num_con("R");
+        component[507][4] = Big_num_con("R");
+        component[508][4] = Big_num_con("R");
+        component[509][4] = Big_num_con("R");
+        component[510][4] = Big_num_con("R");
+        component[511][4] = Big_num_con("R");
+        component[512][4] = Big_num_con("R");
+        component[513][4] = Big_num_con("R");
+        component[514][4] = Big_num_con("R");
+        component[515][4] = Big_num_con("R");
     }
     else if (dis_p == 8)
     {
-        component[500][4] = "************************************";
-        component[501][4] = "************************************";
-        component[502][4] = "************************************";
-        component[503][4] = "***********              ***********";
-        component[504][4] = "***********              ***********";
-        component[505][4] = "***********              ***********";
-        component[506][4] = "************************************";
-        component[507][4] = "************************************";
-        component[508][4] = "************************************";
-        component[509][4] = "***********              ***********";
-        component[510][4] = "***********              ***********";
-        component[511][4] = "***********              ***********";
-        component[512][4] = "***********              ***********";
-        component[513][4] = "***********              ***********";
-        component[514][4] = "************************************";
-        component[515][4] = "************************************";
+        component[500][4] = Big_num_con("T");
+        component[501][4] = Big_num_con("T");
+        component[502][4] = Big_num_con("T");
+        component[503][4] = Big_num_con("V");
+        component[504][4] = Big_num_con("V");
+        component[505][4] = Big_num_con("V");
+        component[506][4] = Big_num_con("T");
+        component[507][4] = Big_num_con("T");
+        component[508][4] = Big_num_con("T");
+        component[509][4] = Big_num_con("V");
+        component[510][4] = Big_num_con("V");
+        component[511][4] = Big_num_con("V");
+        component[512][4] = Big_num_con("V");
+        component[513][4] = Big_num_con("V");
+        component[514][4] = Big_num_con("T");
+        component[515][4] = Big_num_con("T");
     }
     else if (dis_p == 9)
     {
-        component[500][4] = "************************************";
-        component[501][4] = "************************************";
-        component[502][4] = "************************************";
-        component[503][4] = "***********              ***********";
-        component[504][4] = "***********              ***********";
-        component[505][4] = "***********              ***********";
-        component[506][4] = "************************************";
-        component[507][4] = "************************************";
-        component[508][4] = "************************************";
-        component[509][4] = "                         ***********";
-        component[510][4] = "                         ***********";
-        component[511][4] = "                         ***********";
-        component[512][4] = "************************************";
-        component[513][4] = "************************************";
-        component[514][4] = "************************************";
-        component[515][4] = "************************************";
+        component[500][4] = Big_num_con("T");
+        component[501][4] = Big_num_con("T");
+        component[502][4] = Big_num_con("T");
+        component[503][4] = Big_num_con("V");
+        component[504][4] = Big_num_con("V");
+        component[505][4] = Big_num_con("V");
+        component[506][4] = Big_num_con("T");
+        component[507][4] = Big_num_con("T");
+        component[508][4] = Big_num_con("T");
+        component[509][4] = Big_num_con("R");
+        component[510][4] = Big_num_con("R");
+        component[511][4] = Big_num_con("R");
+        component[512][4] = Big_num_con("T");
+        component[513][4] = Big_num_con("T");
+        component[514][4] = Big_num_con("T");
+        component[515][4] = Big_num_con("T");
     }
     else
     {
-        component[500][4] = "                                    ";
-        component[501][4] = "                                    ";
-        component[502][4] = "                                    ";
-        component[503][4] = "                                    ";
-        component[504][4] = "                                    ";
-        component[505][4] = "                                    ";
-        component[506][4] = "                                    ";
-        component[507][4] = "                                    ";
-        component[508][4] = "                                    ";
-        component[509][4] = "                                    ";
-        component[510][4] = "                                    ";
-        component[511][4] = "                                    ";
-        component[512][4] = "                                    ";
-        component[513][4] = "                                    ";
-        component[514][4] = "                                    ";
-        component[515][4] = "                                    ";
+        component[500][4] = Big_num_con("O");
+        component[501][4] = Big_num_con("O");
+        component[502][4] = Big_num_con("O");
+        component[503][4] = Big_num_con("O");
+        component[504][4] = Big_num_con("O");
+        component[505][4] = Big_num_con("O");
+        component[506][4] = Big_num_con("O");
+        component[507][4] = Big_num_con("O");
+        component[508][4] = Big_num_con("O");
+        component[509][4] = Big_num_con("O");
+        component[510][4] = Big_num_con("O");
+        component[511][4] = Big_num_con("O");
+        component[512][4] = Big_num_con("O");
+        component[513][4] = Big_num_con("O");
+        component[514][4] = Big_num_con("O");
+        component[515][4] = Big_num_con("O");
     }
 }
 void Display_Price_Position_6(int dis_p)
 {
     if (dis_p == 0)
     {
-        component[500][5] = "************************************";
-        component[501][5] = "************************************";
-        component[502][5] = "***********              ***********";
-        component[503][5] = "***********              ***********";
-        component[504][5] = "***********              ***********";
-        component[505][5] = "***********              ***********";
-        component[506][5] = "***********              ***********";
-        component[507][5] = "***********              ***********";
-        component[508][5] = "***********              ***********";
-        component[509][5] = "***********              ***********";
-        component[510][5] = "***********              ***********";
-        component[511][5] = "***********              ***********";
-        component[512][5] = "***********              ***********";
-        component[513][5] = "***********              ***********";
-        component[514][5] = "************************************";
-        component[515][5] = "************************************";
+        component[500][5] = Big_num_con("T");
+        component[501][5] = Big_num_con("T");
+        component[502][5] = Big_num_con("V");
+        component[503][5] = Big_num_con("V");
+        component[504][5] = Big_num_con("V");
+        component[505][5] = Big_num_con("V");
+        component[506][5] = Big_num_con("V");
+        component[507][5] = Big_num_con("V");
+        component[508][5] = Big_num_con("V");
+        component[509][5] = Big_num_con("V");
+        component[510][5] = Big_num_con("V");
+        component[511][5] = Big_num_con("V");
+        component[512][5] = Big_num_con("V");
+        component[513][5] = Big_num_con("V");
+        component[514][5] = Big_num_con("T");
+        component[515][5] = Big_num_con("T");
     }
     else if (dis_p == 1)
     {
-        component[500][5] = "                         ***********";
-        component[501][5] = "                         ***********";
-        component[502][5] = "                         ***********";
-        component[503][5] = "                         ***********";
-        component[504][5] = "                         ***********";
-        component[505][5] = "                         ***********";
-        component[506][5] = "                         ***********";
-        component[507][5] = "                         ***********";
-        component[508][5] = "                         ***********";
-        component[509][5] = "                         ***********";
-        component[510][5] = "                         ***********";
-        component[511][5] = "                         ***********";
-        component[512][5] = "                         ***********";
-        component[513][5] = "                         ***********";
-        component[514][5] = "                         ***********";
-        component[515][5] = "                         ***********";
+        component[500][5] = Big_num_con("R");
+        component[501][5] = Big_num_con("R");
+        component[502][5] = Big_num_con("R");
+        component[503][5] = Big_num_con("R");
+        component[504][5] = Big_num_con("R");
+        component[505][5] = Big_num_con("R");
+        component[506][5] = Big_num_con("R");
+        component[507][5] = Big_num_con("R");
+        component[508][5] = Big_num_con("R");
+        component[509][5] = Big_num_con("R");
+        component[510][5] = Big_num_con("R");
+        component[511][5] = Big_num_con("R");
+        component[512][5] = Big_num_con("R");
+        component[513][5] = Big_num_con("R");
+        component[514][5] = Big_num_con("R");
+        component[515][5] = Big_num_con("R");
     }
     else if (dis_p == 2)
     {
-        component[500][5] = "************************************";
-        component[501][5] = "************************************";
-        component[502][5] = "************************************";
-        component[503][5] = "                         ***********";
-        component[504][5] = "                         ***********";
-        component[505][5] = "                         ***********";
-        component[506][5] = "************************************";
-        component[507][5] = "************************************";
-        component[508][5] = "************************************";
-        component[509][5] = "************************************";
-        component[510][5] = "***********                         ";
-        component[511][5] = "***********                         ";
-        component[512][5] = "***********                         ";
-        component[513][5] = "************************************";
-        component[514][5] = "************************************";
-        component[515][5] = "************************************";
+        component[500][5] = Big_num_con("T");
+        component[501][5] = Big_num_con("T");
+        component[502][5] = Big_num_con("T");
+        component[503][5] = Big_num_con("R");
+        component[504][5] = Big_num_con("R");
+        component[505][5] = Big_num_con("R");
+        component[506][5] = Big_num_con("T");
+        component[507][5] = Big_num_con("T");
+        component[508][5] = Big_num_con("T");
+        component[509][5] = Big_num_con("T");
+        component[510][5] = Big_num_con("L");
+        component[511][5] = Big_num_con("L");
+        component[512][5] = Big_num_con("L");
+        component[513][5] = Big_num_con("T");
+        component[514][5] = Big_num_con("T");
+        component[515][5] = Big_num_con("T");
     }
     else if (dis_p == 3)
     {
-        component[500][5] = "************************************";
-        component[501][5] = "************************************";
-        component[502][5] = "************************************";
-        component[503][5] = "                         ***********";
-        component[504][5] = "                         ***********";
-        component[505][5] = "                         ***********";
-        component[506][5] = "************************************";
-        component[507][5] = "************************************";
-        component[508][5] = "************************************";
-        component[509][5] = "                         ***********";
-        component[510][5] = "                         ***********";
-        component[511][5] = "                         ***********";
-        component[512][5] = "************************************";
-        component[513][5] = "************************************";
-        component[514][5] = "************************************";
-        component[515][5] = "************************************";
+        component[500][5] = Big_num_con("T");
+        component[501][5] = Big_num_con("T");
+        component[502][5] = Big_num_con("T");
+        component[503][5] = Big_num_con("R");
+        component[504][5] = Big_num_con("R");
+        component[505][5] = Big_num_con("R");
+        component[506][5] = Big_num_con("T");
+        component[507][5] = Big_num_con("T");
+        component[508][5] = Big_num_con("T");
+        component[509][5] = Big_num_con("R");
+        component[510][5] = Big_num_con("R");
+        component[511][5] = Big_num_con("R");
+        component[512][5] = Big_num_con("T");
+        component[513][5] = Big_num_con("T");
+        component[514][5] = Big_num_con("T");
+        component[515][5] = Big_num_con("T");
     }
     else if (dis_p == 4)
     {
-        component[500][5] = "***********              ***********";
-        component[501][5] = "***********              ***********";
-        component[502][5] = "***********              ***********";
-        component[503][5] = "***********              ***********";
-        component[504][5] = "***********              ***********";
-        component[505][5] = "***********              ***********";
-        component[506][5] = "************************************";
-        component[507][5] = "************************************";
-        component[508][5] = "************************************";
-        component[509][5] = "                         ***********";
-        component[510][5] = "                         ***********";
-        component[511][5] = "                         ***********";
-        component[512][5] = "                         ***********";
-        component[513][5] = "                         ***********";
-        component[514][5] = "                         ***********";
-        component[515][5] = "                         ***********";
+        component[500][5] = Big_num_con("V");
+        component[501][5] = Big_num_con("V");
+        component[502][5] = Big_num_con("V");
+        component[503][5] = Big_num_con("V");
+        component[504][5] = Big_num_con("V");
+        component[505][5] = Big_num_con("V");
+        component[506][5] = Big_num_con("T");
+        component[507][5] = Big_num_con("T");
+        component[508][5] = Big_num_con("T");
+        component[509][5] = Big_num_con("R");
+        component[510][5] = Big_num_con("R");
+        component[511][5] = Big_num_con("R");
+        component[512][5] = Big_num_con("R");
+        component[513][5] = Big_num_con("R");
+        component[514][5] = Big_num_con("R");
+        component[515][5] = Big_num_con("R");
     }
     else if (dis_p == 5)
     {
-        component[500][5] = "************************************";
-        component[501][5] = "************************************";
-        component[502][5] = "************************************";
-        component[503][5] = "***********                         ";
-        component[504][5] = "***********                         ";
-        component[505][5] = "***********                         ";
-        component[506][5] = "************************************";
-        component[507][5] = "************************************";
-        component[508][5] = "************************************";
-        component[509][5] = "                         ***********";
-        component[510][5] = "                         ***********";
-        component[511][5] = "                         ***********";
-        component[512][5] = "************************************";
-        component[513][5] = "************************************";
-        component[514][5] = "************************************";
-        component[515][5] = "************************************";
+        component[500][5] = Big_num_con("T");
+        component[501][5] = Big_num_con("T");
+        component[502][5] = Big_num_con("T");
+        component[503][5] = Big_num_con("L");
+        component[504][5] = Big_num_con("L");
+        component[505][5] = Big_num_con("L");
+        component[506][5] = Big_num_con("T");
+        component[507][5] = Big_num_con("T");
+        component[508][5] = Big_num_con("T");
+        component[509][5] = Big_num_con("R");
+        component[510][5] = Big_num_con("R");
+        component[511][5] = Big_num_con("R");
+        component[512][5] = Big_num_con("T");
+        component[513][5] = Big_num_con("T");
+        component[514][5] = Big_num_con("T");
+        component[515][5] = Big_num_con("T");
     }
     else if (dis_p == 6)
     {
-        component[500][5] = "************************************";
-        component[501][5] = "************************************";
-        component[502][5] = "************************************";
-        component[503][5] = "***********                         ";
-        component[504][5] = "***********                         ";
-        component[505][5] = "***********                         ";
-        component[506][5] = "************************************";
-        component[507][5] = "************************************";
-        component[508][5] = "************************************";
-        component[509][5] = "***********              ***********";
-        component[510][5] = "***********              ***********";
-        component[511][5] = "***********              ***********";
-        component[512][5] = "***********              ***********";
-        component[513][5] = "***********              ***********";
-        component[514][5] = "************************************";
-        component[515][5] = "************************************";
+        component[500][5] = Big_num_con("T");
+        component[501][5] = Big_num_con("T");
+        component[502][5] = Big_num_con("T");
+        component[503][5] = Big_num_con("L");
+        component[504][5] = Big_num_con("L");
+        component[505][5] = Big_num_con("L");
+        component[506][5] = Big_num_con("T");
+        component[507][5] = Big_num_con("T");
+        component[508][5] = Big_num_con("T");
+        component[509][5] = Big_num_con("V");
+        component[510][5] = Big_num_con("V");
+        component[511][5] = Big_num_con("V");
+        component[512][5] = Big_num_con("V");
+        component[513][5] = Big_num_con("V");
+        component[514][5] = Big_num_con("T");
+        component[515][5] = Big_num_con("T");
     }
     else if (dis_p == 7)
     {
-        component[500][5] = "************************************";
-        component[501][5] = "************************************";
-        component[502][5] = "************************************";
-        component[503][5] = "                         ***********";
-        component[504][5] = "                         ***********";
-        component[505][5] = "                         ***********";
-        component[506][5] = "                         ***********";
-        component[507][5] = "                         ***********";
-        component[508][5] = "                         ***********";
-        component[509][5] = "                         ***********";
-        component[510][5] = "                         ***********";
-        component[511][5] = "                         ***********";
-        component[512][5] = "                         ***********";
-        component[513][5] = "                         ***********";
-        component[514][5] = "                         ***********";
-        component[515][5] = "                         ***********";
+        component[500][5] = Big_num_con("T");
+        component[501][5] = Big_num_con("T");
+        component[502][5] = Big_num_con("T");
+        component[503][5] = Big_num_con("R");
+        component[504][5] = Big_num_con("R");
+        component[505][5] = Big_num_con("R");
+        component[506][5] = Big_num_con("R");
+        component[507][5] = Big_num_con("R");
+        component[508][5] = Big_num_con("R");
+        component[509][5] = Big_num_con("R");
+        component[510][5] = Big_num_con("R");
+        component[511][5] = Big_num_con("R");
+        component[512][5] = Big_num_con("R");
+        component[513][5] = Big_num_con("R");
+        component[514][5] = Big_num_con("R");
+        component[515][5] = Big_num_con("R");
     }
     else if (dis_p == 8)
     {
-        component[500][5] = "************************************";
-        component[501][5] = "************************************";
-        component[502][5] = "************************************";
-        component[503][5] = "***********              ***********";
-        component[504][5] = "***********              ***********";
-        component[505][5] = "***********              ***********";
-        component[506][5] = "************************************";
-        component[507][5] = "************************************";
-        component[508][5] = "************************************";
-        component[509][5] = "***********              ***********";
-        component[510][5] = "***********              ***********";
-        component[511][5] = "***********              ***********";
-        component[512][5] = "***********              ***********";
-        component[513][5] = "***********              ***********";
-        component[514][5] = "************************************";
-        component[515][5] = "************************************";
+        component[500][5] = Big_num_con("T");
+        component[501][5] = Big_num_con("T");
+        component[502][5] = Big_num_con("T");
+        component[503][5] = Big_num_con("V");
+        component[504][5] = Big_num_con("V");
+        component[505][5] = Big_num_con("V");
+        component[506][5] = Big_num_con("T");
+        component[507][5] = Big_num_con("T");
+        component[508][5] = Big_num_con("T");
+        component[509][5] = Big_num_con("V");
+        component[510][5] = Big_num_con("V");
+        component[511][5] = Big_num_con("V");
+        component[512][5] = Big_num_con("V");
+        component[513][5] = Big_num_con("V");
+        component[514][5] = Big_num_con("T");
+        component[515][5] = Big_num_con("T");
     }
     else if (dis_p == 9)
     {
-        component[500][5] = "************************************";
-        component[501][5] = "************************************";
-        component[502][5] = "************************************";
-        component[503][5] = "***********              ***********";
-        component[504][5] = "***********              ***********";
-        component[505][5] = "***********              ***********";
-        component[506][5] = "************************************";
-        component[507][5] = "************************************";
-        component[508][5] = "************************************";
-        component[509][5] = "                         ***********";
-        component[510][5] = "                         ***********";
-        component[511][5] = "                         ***********";
-        component[512][5] = "************************************";
-        component[513][5] = "************************************";
-        component[514][5] = "************************************";
-        component[515][5] = "************************************";
+        component[500][5] = Big_num_con("T");
+        component[501][5] = Big_num_con("T");
+        component[502][5] = Big_num_con("T");
+        component[503][5] = Big_num_con("V");
+        component[504][5] = Big_num_con("V");
+        component[505][5] = Big_num_con("V");
+        component[506][5] = Big_num_con("T");
+        component[507][5] = Big_num_con("T");
+        component[508][5] = Big_num_con("T");
+        component[509][5] = Big_num_con("R");
+        component[510][5] = Big_num_con("R");
+        component[511][5] = Big_num_con("R");
+        component[512][5] = Big_num_con("T");
+        component[513][5] = Big_num_con("T");
+        component[514][5] = Big_num_con("T");
+        component[515][5] = Big_num_con("T");
     }
     else
     {
-        component[500][5] = "                                    ";
-        component[501][5] = "                                    ";
-        component[502][5] = "                                    ";
-        component[503][5] = "                                    ";
-        component[504][5] = "                                    ";
-        component[505][5] = "                                    ";
-        component[506][5] = "                                    ";
-        component[507][5] = "                                    ";
-        component[508][5] = "                                    ";
-        component[509][5] = "                                    ";
-        component[510][5] = "                                    ";
-        component[511][5] = "                                    ";
-        component[512][5] = "                                    ";
-        component[513][5] = "                                    ";
-        component[514][5] = "                                    ";
-        component[515][5] = "                                    ";
+        component[500][5] = Big_num_con("O");
+        component[501][5] = Big_num_con("O");
+        component[502][5] = Big_num_con("O");
+        component[503][5] = Big_num_con("O");
+        component[504][5] = Big_num_con("O");
+        component[505][5] = Big_num_con("O");
+        component[506][5] = Big_num_con("O");
+        component[507][5] = Big_num_con("O");
+        component[508][5] = Big_num_con("O");
+        component[509][5] = Big_num_con("O");
+        component[510][5] = Big_num_con("O");
+        component[511][5] = Big_num_con("O");
+        component[512][5] = Big_num_con("O");
+        component[513][5] = Big_num_con("O");
+        component[514][5] = Big_num_con("O");
+        component[515][5] = Big_num_con("O");
     }
 }
 void write_file_item()
