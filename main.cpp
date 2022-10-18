@@ -29,12 +29,10 @@ int size16 = 54;    // size of member Def = 54
 int Big_num = 36;   // size of component Def = 36
 int line_show = 40; // size of component Def = line_show
 // ----------------
-
-// os detect
-// ----------------
 int sum = 0;
 int Process_sell_change(string money);
 string Big_num_con(string num);
+void exit();
 void border();
 void title_bar();
 void show_manu();
@@ -62,6 +60,10 @@ void Display_Price_Position_5(int dis_p);
 void Display_Price_Position_6(int dis_p);
 void convert(int D);
 void set_size();
+void exit()
+{
+    cout<<red<<"Thank you for using this program"<<def<<endl;
+}
 string Big_num_con(string num)
 {
     string show = "";
@@ -2021,6 +2023,11 @@ void Sell()
     {
         reset_component();
         Displays(5);
+    }
+    else if (command == "x" || command == "X" || command == ".exit")
+    {
+        reset_component();
+        exit();
     }
     else
     {
