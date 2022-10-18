@@ -273,7 +273,11 @@ void set_size()
     size15 = (size15 * percen) / 100;
     size16 = (size16 * percen) / 100;
     Big_num = (Big_num * percen) / 100;
-    line_show = (line_show * percen) / 100;
+    #ifdef _WIN32
+    line_show = (line_show * (percen-10)) / 100;
+    #else
+    line_show = (line_show * (percen)) / 100;
+    #endif
 }
 int main()
 {
