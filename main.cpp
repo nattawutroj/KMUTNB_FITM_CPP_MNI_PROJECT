@@ -9,6 +9,7 @@ Color::Modifier def(Color::FG_DEFAULT);
 string component[1000][10];
 string item[1000][3];
 string member[1000][3];
+int exit_manager = 1;
 // set size Display
 int size1 = 38;     // size of component Def = 38
 int size2 = 26;     // size of item Def = 26
@@ -37,6 +38,7 @@ void border();
 void title_bar();
 void show_manu();
 void l_i_s_t();
+int main();
 void header();
 void header_add_item();
 void member_list_show();
@@ -60,9 +62,11 @@ void Display_Price_Position_5(int dis_p);
 void Display_Price_Position_6(int dis_p);
 void convert(int D);
 void set_size();
-void exit()
+void E_exit()
 {
-    cout<<red<<"Thank you for using this program"<<def<<endl;
+    cout << red << "Thank you for using this program" << def << endl;
+    exit_manager = 0;
+    exit(0);
 }
 string Big_num_con(string num)
 {
@@ -238,7 +242,7 @@ void l_i_s_t()
 }
 void show_manu()
 {
-    cout << "       [A]dd Item    [R]ergister member    [S]ell    [M]ember list" << setw(size12) << endl;
+    cout << "       [A]dd Item    [R]ergister member    [S]ell    [M]ember list    E[x]it" << setw(size12) << endl;
 }
 void title_bar()
 {
@@ -275,20 +279,23 @@ void set_size()
     size15 = (size15 * percen) / 100;
     size16 = (size16 * percen) / 100;
     Big_num = (Big_num * percen) / 100;
-    #ifdef _WIN32
-    line_show = (line_show * (percen-10)) / 100;
-    #else
+#ifdef _WIN32
+    line_show = (line_show * (percen - 10)) / 100;
+#else
     line_show = (line_show * (percen)) / 100;
-    #endif
+#endif
 }
 int main()
 {
-    set_size();
-    read_file_item();
-    read_file_member();
-    Displays(1);
-    write_file_item();
-    write_file_member();
+    if (exit_manager == 1)
+    {
+        set_size();
+        read_file_item();
+        read_file_member();
+        Displays(1);
+        write_file_item();
+        write_file_member();
+    }
     return 1;
 }
 void reset_component()
@@ -1732,11 +1739,11 @@ void read_file_member()
 }
 void Displays(int show)
 {
-    #ifdef _WIN32
-        system("cls");
-    #else
-        system("clear");
-    #endif
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
     border();
     title_bar();
     border();
@@ -1846,10 +1853,12 @@ void Displays(int show)
             cout << setw(size7) << "Press Enter to continue...";
             cin.ignore();
             cin.get();
+            sum = 0;
             Displays(1);
         }
         else
         {
+            sum = 0;
             Displays(1);
         }
     }
@@ -1882,6 +1891,7 @@ void Displays(int show)
         if (code == "X" || code == "x")
         {
             reset_component();
+            sum = 0;
             Displays(1);
         }
         cout << setw(size6) << "Item Name : ";
@@ -1960,17 +1970,18 @@ void Displays(int show)
         if (code == "X" || code == "x")
         {
             reset_component();
+            sum = 0;
             Displays(1);
         }
         else if (code == "1")
         {
             loop_show_member_list = 0;
             page_in = 1;
-            #ifdef _WIN32
-                system("cls");
-            #else
-                system("clear");
-            #endif
+#ifdef _WIN32
+            system("cls");
+#else
+            system("clear");
+#endif
             border();
             title_bar();
             border();
@@ -1985,11 +1996,11 @@ void Displays(int show)
 
                 loop_show_member_list = (line_show * stoi(code) - line_show);
                 page_in = stoi(code);
-                #ifdef _WIN32
-                    system("cls");
-                #else
-                    system("clear");
-                #endif
+#ifdef _WIN32
+                system("cls");
+#else
+                system("clear");
+#endif
                 border();
                 title_bar();
                 border();
@@ -2026,8 +2037,7 @@ void Sell()
     }
     else if (command == "x" || command == "X" || command == ".exit")
     {
-        reset_component();
-        exit();
+        E_exit();
     }
     else
     {
