@@ -242,7 +242,7 @@ void l_i_s_t()
 }
 void show_manu()
 {
-    cout << "       [A]dd Item    [R]ergister member    [S]ell    [M]ember list    [H]istory    E[x]it" << setw(size12) << endl;
+    cout << "       [A]dd Item    [R]ergister member    [S]ell    [M]ember list    E[x]it" << setw(size12) << endl;
 }
 void title_bar()
 {
