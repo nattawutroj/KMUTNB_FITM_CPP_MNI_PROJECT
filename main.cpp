@@ -36,13 +36,13 @@ string Big_num_con(string num);
 void exit();
 void border();
 void title_bar();
-void show_manu();
+void show_menu();
 void l_i_s_t();
 int main();
 void header();
 void header_add_item();
 void member_list_show();
-void Process_sell_memeber(string phone);
+void Process_sell_member(string phone);
 void Displays(int show);
 void reset_component();
 void Add_item();
@@ -240,13 +240,13 @@ void l_i_s_t()
 {
     cout << "=" << setw(size13) << "=" << setw(size14) << "=" << setw(size15) << "=" << setw(size16) << "=" << endl;
 }
-void show_manu()
+void show_menu()
 {
     cout << "       [A]dd Item    [R]ergister member    [S]ell    [M]ember list    E[x]it" << setw(size12) << endl;
 }
 void title_bar()
 {
-    cout << "=" << setw(size11) << "WELLCOME PEEWINWASH" << setw(20) << setw(size11) << "=" << endl;
+    cout << "=" << setw(size11) << "WELCOME PEEWINWASH" << setw(20) << setw(size11) << "=" << endl;
 }
 void border()
 {
@@ -260,7 +260,7 @@ void border()
 void set_size()
 {
     int percen;
-    cout << "Set size of component (best Recomant Between 72 - 100) : ";
+    cout << "Set size of component (best Recommend Between 72 - 100) : ";
     cin >> percen;
     size1 = (size1 * percen) / 100;
     size2 = (size2 * percen) / 100;
@@ -475,7 +475,7 @@ void Displays(int show)
     border();
     title_bar();
     border();
-    show_manu();
+    show_menu();
     border();
     if (show == 1)
     {
@@ -513,7 +513,7 @@ void Displays(int show)
         cout << setw(size6) << "Total = " << setw(size1) << sum << setw(size1) << endl;
         cout << setw(size6) << "Phone member : " << setw(size1);
         cin >> phone;
-        Process_sell_memeber(phone);
+        Process_sell_member(phone);
         cout << setw(size6) << "Name : " << setw(size1) << component[200][1] << setw(size1) << endl;
         cout << setw(size6) << "E-mail : " << setw(size1) << component[200][2] << setw(size1) << endl;
         cout << setw(size6) << "Receive Money : " << setw(size1);
@@ -722,7 +722,7 @@ void Displays(int show)
             border();
             title_bar();
             border();
-            show_manu();
+            show_menu();
             border();
             goto jump;
         }
@@ -741,7 +741,7 @@ void Displays(int show)
                 border();
                 title_bar();
                 border();
-                show_manu();
+                show_menu();
                 border();
                 goto jump;
             }
@@ -864,7 +864,7 @@ void Process(string code)
     }
     Displays(1);
 }
-void Process_sell_memeber(string phone)
+void Process_sell_member(string phone)
 {
     int loop = 0;
     while (loop < 1000)
