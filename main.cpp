@@ -31,6 +31,7 @@ int Big_num = 36;   // size of component Def = 36
 int line_show = 40; // size of component Def = line_show
 // ----------------
 int sum = 0;
+void check_file_and_read_file();
 int Process_sell_change(string money);
 string Big_num_con(string num);
 void exit();
@@ -67,6 +68,28 @@ void E_exit()
     cout << red << "Thank you for using this program" << def << endl;
     exit_manager = 0;
     exit(0);
+}
+void check_file_and_read_file()
+{
+    ifstream infile;
+    infile.open("item");
+    if (!infile)
+    {
+        ofstream outf;
+        outf.open("item", ios_base::out);
+        outf.close();
+    }
+    infile.close();
+    infile.open("member");
+    if (!infile)
+    {
+        ofstream outf;
+        outf.open("member", ios_base::out);
+        outf.close();
+    }
+    infile.close();
+    read_file_item();
+    read_file_member();
 }
 string Big_num_con(string num)
 {
@@ -259,30 +282,30 @@ void border()
 }
 void set_size()
 {
-    int percen;
+    int percent;
     cout << "Set size of component (best Recommend Between 72 - 100) : ";
-    cin >> percen;
-    size1 = (size1 * percen) / 100;
-    size2 = (size2 * percen) / 100;
-    size3 = (size3 * percen) / 100;
-    size4 = (size4 * percen) / 100;
-    size5 = (size5 * percen) / 100;
-    size6 = (size6 * percen) / 100;
-    size7 = (size7 * percen) / 100;
-    size8 = (size8 * percen) / 100;
-    size9 = (size9 * percen) / 100;
-    size10 = (size10 * percen) / 100;
-    size11 = (size11 * percen) / 100;
-    size12 = (size12 * percen) / 100;
-    size13 = (size13 * percen) / 100;
-    size14 = (size14 * percen) / 100;
-    size15 = (size15 * percen) / 100;
-    size16 = (size16 * percen) / 100;
-    Big_num = (Big_num * percen) / 100;
+    cin >> percent;
+    size1 = (size1 * percent) / 100;
+    size2 = (size2 * percent) / 100;
+    size3 = (size3 * percent) / 100;
+    size4 = (size4 * percent) / 100;
+    size5 = (size5 * percent) / 100;
+    size6 = (size6 * percent) / 100;
+    size7 = (size7 * percent) / 100;
+    size8 = (size8 * percent) / 100;
+    size9 = (size9 * percent) / 100;
+    size10 = (size10 * percent) / 100;
+    size11 = (size11 * percent) / 100;
+    size12 = (size12 * percent) / 100;
+    size13 = (size13 * percent) / 100;
+    size14 = (size14 * percent) / 100;
+    size15 = (size15 * percent) / 100;
+    size16 = (size16 * percent) / 100;
+    Big_num = (Big_num * percent) / 100;
 #ifdef _WIN32
-    line_show = (line_show * (percen - 10)) / 100;
+    line_show = (line_show * (percent - 10)) / 100;
 #else
-    line_show = (line_show * (percen)) / 100;
+    line_show = (line_show * (percent)) / 100;
 #endif
 }
 int main()
@@ -290,8 +313,7 @@ int main()
     if (exit_manager == 1)
     {
         set_size();
-        read_file_item();
-        read_file_member();
+        check_file_and_read_file();
         Displays(1);
         write_file_item();
         write_file_member();
@@ -373,14 +395,14 @@ void write_file_item()
     int loop = 0;
     while (item[loop][0] != dummy)
     {
-        int loopin = 0;
-        while (loopin < 3)
+        int loop_in = 0;
+        while (loop_in < 3)
         {
             string Buffer = "";
-            Buffer = Buffer + item[loop][loopin];
+            Buffer = Buffer + item[loop][loop_in];
             Buffer = Buffer + " ";
             outf << Buffer;
-            loopin++;
+            loop_in++;
         }
         outf << endl;
         loop++;
@@ -395,14 +417,14 @@ void write_file_member()
     int loop = 0;
     while (member[loop][0] != dummy)
     {
-        int loopin = 0;
-        while (loopin < 4)
+        int loop_in = 0;
+        while (loop_in < 4)
         {
             string Buffer = "";
-            Buffer = Buffer + member[loop][loopin];
+            Buffer = Buffer + member[loop][loop_in];
             Buffer = Buffer + " ";
             outf << Buffer;
-            loopin++;
+            loop_in++;
         }
         outf << endl;
         loop++;
@@ -417,11 +439,11 @@ void read_file_item()
     int loop = 0;
     while (getline(inf, Buffer))
     {
-        int loopin = 0, loop_ay = 0;
+        int loop_in = 0, loop_ay = 0;
         string Buffer_string = "";
-        while (loopin <= Buffer.size())
+        while (loop_in <= Buffer.size())
         {
-            if (Buffer[loopin] == ' ')
+            if (Buffer[loop_in] == ' ')
             {
                 item[loop][loop_ay] = Buffer_string;
                 Buffer_string = "";
@@ -429,9 +451,9 @@ void read_file_item()
             }
             else
             {
-                Buffer_string = Buffer_string + Buffer[loopin];
+                Buffer_string = Buffer_string + Buffer[loop_in];
             }
-            loopin++;
+            loop_in++;
         }
         loop++;
     }
@@ -445,11 +467,11 @@ void read_file_member()
     int loop = 0;
     while (getline(inf, Buffer))
     {
-        int loopin = 0, loop_ay = 0;
+        int loop_in = 0, loop_ay = 0;
         string Buffer_string = "";
-        while (loopin <= Buffer.size())
+        while (loop_in <= Buffer.size())
         {
-            if (Buffer[loopin] == ' ')
+            if (Buffer[loop_in] == ' ')
             {
                 member[loop][loop_ay] = Buffer_string;
                 Buffer_string = "";
@@ -457,9 +479,9 @@ void read_file_member()
             }
             else
             {
-                Buffer_string = Buffer_string + Buffer[loopin];
+                Buffer_string = Buffer_string + Buffer[loop_in];
             }
-            loopin++;
+            loop_in++;
         }
         loop++;
     }
@@ -847,15 +869,15 @@ void Process(string code)
     {
         if (item[loop][0] == code)
         {
-            int loopin = 0;
-            while (component[loopin][0] != "")
+            int loop_in = 0;
+            while (component[loop_in][0] != "")
             {
-                loopin++;
+                loop_in++;
             }
-            component[loopin][0] = item[loop][0];
-            component[loopin][1] = item[loop][1];
-            component[loopin][3] = "1";
-            component[loopin][2] = item[loop][2];
+            component[loop_in][0] = item[loop][0];
+            component[loop_in][1] = item[loop][1];
+            component[loop_in][3] = "1";
+            component[loop_in][2] = item[loop][2];
             sum = sum + stoi(item[loop][2]);
             convert(sum);
             Displays(1);
@@ -886,7 +908,8 @@ int Process_sell_change(string money)
 void Add_item()
 {
     cout << "Enter code item : ";
-}void Display_Price_Position_1(int dis_p)
+}
+void Display_Price_Position_1(int dis_p)
 {
     if (dis_p == 0)
     {
