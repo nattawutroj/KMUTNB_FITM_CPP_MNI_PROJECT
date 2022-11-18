@@ -28,7 +28,7 @@ int size14 = 98;    // size of member Def = 98
 int size15 = 32;    // size of member Def = 32
 int size16 = 54;    // size of member Def = 54
 int Big_num = 36;   // size of component Def = 36
-int line_show = 40; // size of component Def = line_show
+int line_show = 30; // size of component Def = line_show
 // ----------------
 int sum = 0;
 void check_file_and_read_file();
